@@ -24,6 +24,21 @@ Preferred communication style: Simple, everyday language.
   - Green for emergency contacts
 - App now fully functional with proper color coding for medical emergencies
 
+### August 7, 2025 - Implemented Revised Emergency Screen Layout
+- Complete redesign of all 4 emergency condition pages with structured sections:
+  - Header with condition name and relevant icon
+  - Warning Signs section with 4-5 bullet points in emergency colors
+  - Step-by-Step Instructions with numbered steps, titles, and action statements
+  - Visual aid placeholders for future image integration
+  - Sticky "CALL 112 NOW" emergency button at bottom
+  - Navigation with back button to home
+- Color-coded borders and elements for each emergency type:
+  - Cardiac Arrest: Red theme with Heart icon
+  - Stroke: Orange theme with Brain icon  
+  - Heart Attack: Yellow theme with Activity icon
+  - Sepsis: Purple theme with Thermometer icon
+- Mobile-optimized layout with touch-friendly elements for panic situations
+
 ## System Architecture
 
 ### Frontend Architecture

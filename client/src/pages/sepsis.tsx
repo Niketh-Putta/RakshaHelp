@@ -1,106 +1,162 @@
-import { Thermometer, Phone, MapPin, Heart, Activity, Brain } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowLeft, Phone, Thermometer, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { EmergencyHeader } from "@/components/emergency-header";
-import { EmergencyStep } from "@/components/emergency-step";
+import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import { callEmergency } from "@/lib/pwa";
 
 export default function Sepsis() {
   const { translations } = useLanguage();
 
   const handleCallEmergency = () => {
-    callEmergency('112');
+    window.location.href = "tel:112";
   };
-
-  const handleFindHospital = () => {
-    alert('Hospital locator functionality - to be implemented');
-  };
-
-  const dangerSigns = [
-    {
-      icon: <Thermometer className="h-4 w-4" />,
-      title: translations.highFever,
-      description: "Temperature above 101°F (38.3°C) or below 96°F (35.5°C)"
-    },
-    {
-      icon: <Heart className="h-4 w-4" />,
-      title: translations.fastHeartRate,
-      description: "Heart rate over 90 beats per minute"
-    },
-    {
-      icon: <Activity className="h-4 w-4" />,
-      title: translations.breathingProblems,
-      description: "Rapid breathing, shortness of breath"
-    },
-    {
-      icon: <Brain className="h-4 w-4" />,
-      title: translations.confusion,
-      description: "Disorientation, difficulty thinking clearly"
-    }
-  ];
 
   return (
-    <div className="container mx-auto px-4 py-6 max-w-md">
-      <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <EmergencyHeader
-          title={translations.sepsis}
-          subtitle="सेप्सिस - संक्रमण की चेतावनी"
-          bgColor="bg-[hsl(var(--emergency-purple))]"
-          bgColorHover="bg-[hsl(var(--emergency-purple-hover))]"
-          icon={<Thermometer className="h-12 w-12" />}
-          emergencyType="sepsis"
-        />
-
-        <div className="p-6">
-          {/* Danger Signs */}
-          <div className="bg-purple-50 border-l-4 border-[hsl(var(--emergency-purple))] p-4 rounded mb-6">
-            <h3 className="font-bold text-[hsl(var(--emergency-purple))] mb-2" data-testid="text-danger-signs">
-              {translations.dangerSigns}
-            </h3>
-            <p className="text-sm text-gray-700">
-              Sepsis can be deadly. Look for these warning signs:
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {dangerSigns.map((sign, index) => (
-              <Card key={index} className="flex items-start space-x-4 bg-gray-50 p-4 rounded-xl border-0 shadow-sm">
-                <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">
-                  {sign.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1" data-testid={`danger-sign-title-${index}`}>
-                    {sign.title}
-                  </h4>
-                  <p className="text-sm text-gray-700" data-testid={`danger-sign-description-${index}`}>
-                    {sign.description}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-8 space-y-3">
-            <Button
-              onClick={handleCallEmergency}
-              className="w-full bg-[hsl(var(--emergency-green))] hover:bg-[hsl(var(--emergency-green-hover))] text-white py-4 rounded-xl font-bold text-xl touch-target"
-              data-testid="button-call-emergency"
-            >
-              <Phone className="mr-3 h-6 w-6" />
-              {translations.call112Now}
-            </Button>
-            <Button
-              onClick={handleFindHospital}
-              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-xl font-semibold touch-target"
-              data-testid="button-find-hospital"
-            >
-              <MapPin className="mr-2 h-5 w-5" />
-              {translations.findHospital}
-            </Button>
-          </div>
+    <div className="container mx-auto px-4 py-6 max-w-md min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="flex items-center justify-between mb-6 bg-white rounded-2xl p-4 shadow-sm">
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="p-2" data-testid="button-back">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
+        <div className="flex items-center space-x-3">
+          <Thermometer className="h-8 w-8 text-[hsl(var(--emergency-purple))]" />
+          <h1 className="text-xl font-bold text-[hsl(var(--emergency-purple))]" data-testid="text-page-title">
+            Sepsis
+          </h1>
         </div>
+        <div className="w-10" />
+      </header>
+
+      {/* Warning Signs */}
+      <Card className="mb-6 border-[hsl(var(--emergency-purple))] border-2">
+        <CardContent className="p-4">
+          <div className="flex items-center mb-3">
+            <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-purple))] mr-2" />
+            <h2 className="text-lg font-bold text-[hsl(var(--emergency-purple))]" data-testid="text-warning-signs-title">
+              Warning Signs
+            </h2>
+          </div>
+          <ul className="space-y-2 text-sm">
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
+              <span>Fever or very low body temperature</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
+              <span>Fast heart rate or breathing</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
+              <span>Confusion or drowsiness</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
+              <span>Pale or cold skin</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
+              <span>Infection symptoms (e.g., wound, UTI, pneumonia)</span>
+            </li>
+          </ul>
+        </CardContent>
       </Card>
+
+      {/* Step-by-Step Instructions */}
+      <div className="space-y-4 mb-6">
+        <h2 className="text-lg font-bold text-gray-800 px-2">Step-by-Step Actions</h2>
+        
+        {/* Step 1 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-purple))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                1
+              </div>
+              <h3 className="font-bold text-lg">Call Emergency</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Dial 112. Mention symptoms and known infection.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Phone + thermometer or infection symbol]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 2 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-purple))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                2
+              </div>
+              <h3 className="font-bold text-lg">Lay Person Flat</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Keep them lying down and warm.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Person lying under blanket]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 3 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-purple))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                3
+              </div>
+              <h3 className="font-bold text-lg">Don't give food or meds</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Avoid unless instructed by medical professionals.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Crossed-out pill or food]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 4 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-purple))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                4
+              </div>
+              <h3 className="font-bold text-lg">Monitor Vital Signs</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Check breathing, skin color, and alertness.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Face with pale skin, visible breath]</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Emergency Call Button - Sticky */}
+      <div className="fixed bottom-4 left-4 right-4 max-w-md mx-auto">
+        <Button
+          onClick={handleCallEmergency}
+          className="w-full bg-[hsl(var(--emergency-purple))] hover:bg-[hsl(var(--emergency-purple-hover))] text-white py-6 text-lg font-bold rounded-2xl shadow-lg"
+          data-testid="button-emergency-call"
+        >
+          <Phone className="mr-2 h-6 w-6" />
+          CALL 112 NOW
+        </Button>
+        <p className="text-center text-xs text-gray-600 mt-2">
+          Say: "Possible sepsis – infection with confusion and rapid breathing."
+        </p>
+      </div>
+
+      {/* Bottom padding for sticky button */}
+      <div className="h-24"></div>
     </div>
   );
 }

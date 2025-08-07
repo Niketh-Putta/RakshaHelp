@@ -1,86 +1,162 @@
-import { Heart, Phone, MapPin } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { EmergencyHeader } from "@/components/emergency-header";
-import { EmergencyStep } from "@/components/emergency-step";
+import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import { callEmergency } from "@/lib/pwa";
 
 export default function CardiacArrest() {
   const { translations } = useLanguage();
 
   const handleCallEmergency = () => {
-    callEmergency('112');
+    window.location.href = "tel:112";
   };
-
-  const handleFindAED = () => {
-    alert('AED locator functionality - to be implemented');
-  };
-
-  const steps = [
-    {
-      title: translations.checkResponsiveness,
-      description: "Shake shoulders and shout \"Are you okay?\" Check for breathing."
-    },
-    {
-      title: translations.positionHands,
-      description: "Place heel of one hand on center of chest, between nipples. Place other hand on top."
-    },
-    {
-      title: translations.pushHardFast,
-      description: "Push at least 2 inches deep. 100-120 compressions per minute. Let chest return completely."
-    }
-  ];
 
   return (
-    <div className="container mx-auto px-4 py-6 max-w-md">
-      <Card className="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <EmergencyHeader
-          title={translations.cardiacArrest}
-          subtitle="हृदयगति रोकना - तत्काल कार्रवाई"
-          bgColor="bg-[hsl(var(--emergency-red))]"
-          bgColorHover="bg-[hsl(var(--emergency-red-hover))]"
-          icon={<Heart className="h-12 w-12" />}
-          emergencyType="cardiac-arrest"
-        />
-
-        {/* Steps Container */}
-        <div className="p-6">
-          {/* Emergency Steps */}
-          <div className="space-y-6">
-            {steps.map((step, index) => (
-              <EmergencyStep
-                key={index}
-                stepNumber={index + 1}
-                title={step.title}
-                description={step.description}
-                bgColor="bg-[hsl(var(--emergency-red))]"
-                imageAlt={`CPR Step ${index + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Emergency Action Buttons */}
-          <div className="mt-8 space-y-3">
-            <Button
-              onClick={handleCallEmergency}
-              className="w-full bg-[hsl(var(--emergency-green))] hover:bg-[hsl(var(--emergency-green-hover))] text-white py-4 rounded-xl font-bold text-xl transform active:scale-95 transition-all touch-target"
-              data-testid="button-call-emergency"
-            >
-              <Phone className="mr-3 h-6 w-6" />
-              {translations.call112Now}
-            </Button>
-            <Button
-              onClick={handleFindAED}
-              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-xl font-semibold transform active:scale-95 transition-all touch-target"
-              data-testid="button-find-aed"
-            >
-              <MapPin className="mr-2 h-5 w-5" />
-              {translations.findAED}
-            </Button>
-          </div>
+    <div className="container mx-auto px-4 py-6 max-w-md min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="flex items-center justify-between mb-6 bg-white rounded-2xl p-4 shadow-sm">
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="p-2" data-testid="button-back">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
+        <div className="flex items-center space-x-3">
+          <Heart className="h-8 w-8 text-[hsl(var(--emergency-red))]" />
+          <h1 className="text-xl font-bold text-[hsl(var(--emergency-red))]" data-testid="text-page-title">
+            Cardiac Arrest
+          </h1>
         </div>
+        <div className="w-10" />
+      </header>
+
+      {/* Warning Signs */}
+      <Card className="mb-6 border-[hsl(var(--emergency-red))] border-2">
+        <CardContent className="p-4">
+          <div className="flex items-center mb-3">
+            <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-red))] mr-2" />
+            <h2 className="text-lg font-bold text-[hsl(var(--emergency-red))]" data-testid="text-warning-signs-title">
+              Warning Signs
+            </h2>
+          </div>
+          <ul className="space-y-2 text-sm">
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span>Sudden collapse</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span>No pulse or breathing</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span>Loss of consciousness</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span>May have gasping or seizure-like movements</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span>No response when spoken to or shaken</span>
+            </li>
+          </ul>
+        </CardContent>
       </Card>
+
+      {/* Step-by-Step Instructions */}
+      <div className="space-y-4 mb-6">
+        <h2 className="text-lg font-bold text-gray-800 px-2">Step-by-Step Actions</h2>
+        
+        {/* Step 1 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                1
+              </div>
+              <h3 className="font-bold text-lg">Call Emergency</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Dial 112 immediately. Don't wait to confirm symptoms.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Person on phone with emergency symbol]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 2 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                2
+              </div>
+              <h3 className="font-bold text-lg">Start Chest Compressions</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Push hard and fast in the center of the chest (100–120 per minute).
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Hands performing CPR on chest]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 3 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                3
+              </div>
+              <h3 className="font-bold text-lg">Use AED if available</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Follow AED voice prompts. Only use if trained or guided.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: AED being used on a person]</p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Step 4 */}
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+          <CardContent className="p-4">
+            <div className="flex items-center mb-2">
+              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                4
+              </div>
+              <h3 className="font-bold text-lg">Continue CPR until help arrives</h3>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">
+              Don't stop compressions unless person revives or emergency responders take over.
+            </p>
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <p className="text-xs text-gray-600">[Image: Continuous CPR, emergency lights in background]</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Emergency Call Button - Sticky */}
+      <div className="fixed bottom-4 left-4 right-4 max-w-md mx-auto">
+        <Button
+          onClick={handleCallEmergency}
+          className="w-full bg-[hsl(var(--emergency-red))] hover:bg-[hsl(var(--emergency-red-hover))] text-white py-6 text-lg font-bold rounded-2xl shadow-lg"
+          data-testid="button-emergency-call"
+        >
+          <Phone className="mr-2 h-6 w-6" />
+          CALL 112 NOW
+        </Button>
+        <p className="text-center text-xs text-gray-600 mt-2">
+          Say: "Possible cardiac arrest, patient unconscious and not breathing."
+        </p>
+      </div>
+
+      {/* Bottom padding for sticky button */}
+      <div className="h-24"></div>
     </div>
   );
 }
