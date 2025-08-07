@@ -104,9 +104,9 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="/images/cpr-technique.svg" 
-                alt="CPR technique illustration" 
-                className="w-full h-40 object-cover rounded mb-2"
+                src="@assets/image_1754561288976.png" 
+                alt="Proper chest compression techniques - hand positioning and depth" 
+                className="w-full h-48 object-contain rounded mb-2"
               />
               <p className="text-xs text-red-600">Push 5-6cm deep, 100-120 per minute</p>
             </div>
