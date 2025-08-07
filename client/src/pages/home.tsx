@@ -1,4 +1,4 @@
-import { Heart, Brain, Activity, Thermometer, Phone, Users, Wifi } from "lucide-react";
+import { Heart, Brain, Activity, Droplets, Phone, Users, Wifi } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSelector } from "@/components/language-selector";
@@ -88,17 +88,17 @@ export default function Home() {
           </Button>
         </Link>
 
-        {/* Sepsis Button */}
-        <Link href="/sepsis">
+        {/* Severe Bleeding Button */}
+        <Link href="/severe-bleeding">
           <Button
-            onClick={() => handleEmergencyClick('sepsis')}
-            className="emergency-button bg-[hsl(var(--emergency-purple))] hover:bg-[hsl(var(--emergency-purple-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
-            data-testid="button-sepsis"
+            onClick={() => handleEmergencyClick('severe-bleeding')}
+            className="emergency-button bg-[hsl(var(--emergency-red))] hover:bg-[hsl(var(--emergency-red-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
+            data-testid="button-severe-bleeding"
           >
             <div className="text-center">
-              <Thermometer className="h-10 w-10 mb-3 mx-auto" />
+              <Droplets className="h-10 w-10 mb-3 mx-auto" />
               <h3 className="font-bold text-lg mb-1 emergency-text">
-                {translations.sepsis}
+                {translations.severeBleeding}
               </h3>
             </div>
           </Button>

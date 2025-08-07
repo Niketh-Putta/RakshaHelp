@@ -10,7 +10,7 @@ import Home from "@/pages/home";
 import CardiacArrest from "@/pages/cardiac-arrest";
 import Stroke from "@/pages/stroke";
 import HeartAttack from "@/pages/heart-attack";
-import Sepsis from "@/pages/sepsis";
+import SevereBleeding from "@/pages/severe-bleeding";
 
 function Router() {
   return (
@@ -19,7 +19,7 @@ function Router() {
       <Route path="/cardiac-arrest" component={CardiacArrest} />
       <Route path="/stroke" component={Stroke} />
       <Route path="/heart-attack" component={HeartAttack} />
-      <Route path="/sepsis" component={Sepsis} />
+      <Route path="/severe-bleeding" component={SevereBleeding} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

@@ -8,7 +8,7 @@ export interface Translations {
   cardiacArrest: string;
   stroke: string;
   heartAttack: string;
-  sepsis: string;
+  severeBleeding: string;
   emergencyContacts: string;
   call112: string;
   contacts: string;
@@ -87,10 +87,25 @@ export interface Translations {
   avoidUnlessInstructed: string;
   monitorVitalSigns: string;
   checkBreathingSkinAlertness: string;
+  // Severe Bleeding specific translations
+  bloodFlowingHeavily: string;
+  bloodSoakingThroughClothing: string;
+  spurtingBlood: string;
+  personBecomingPaleWeak: string;
+  uncontrolledBleedingAfter10Min: string;
+  dialImmediatelyIfSevereBleeding: string;
+  applyFirmPressure: string;
+  useCleanClothGauzeHand: string;
+  elevateLimbIfPossible: string;
+  raiseBleedingArmLegAboveHeart: string;
+  doNotRemoveCloth: string;
+  addMoreLayersDontRemoveOriginal: string;
+  keepPersonCalmStill: string;
+  layDownIfDizzyBlanketIfCold: string;
   sayCardiacArrest: string;
   sayStroke: string;
   sayHeartAttack: string;
-  saySepsis: string;
+  saySevereBleeding: string;
 }
 
 // English translations (Base)
@@ -101,7 +116,7 @@ const englishTranslations: Translations = {
   cardiacArrest: "Cardiac Arrest",
   stroke: "Stroke",
   heartAttack: "Heart Attack",
-  sepsis: "Sepsis",
+  severeBleeding: "Severe Bleeding",
   emergencyContacts: "Emergency Contacts",
   call112: "Call 112",
   contacts: "Contacts",
@@ -183,7 +198,22 @@ const englishTranslations: Translations = {
   sayCardiacArrest: "Say: \"Possible cardiac arrest, patient unconscious and not breathing.\"",
   sayStroke: "Say: \"Possible stroke - face drooping and speech slurred.\"",
   sayHeartAttack: "Say: \"Chest pain, suspected heart attack.\"",
-  saySepsis: "Say: \"Possible sepsis - infection with confusion and fast breathing.\""
+  // Severe Bleeding specific translations
+  bloodFlowingHeavily: "Blood flowing heavily from a wound",
+  bloodSoakingThroughClothing: "Blood soaking through clothing or bandages", 
+  spurtingBlood: "Spurting blood (may indicate arterial bleed)",
+  personBecomingPaleWeak: "Person becoming pale, weak, or dizzy",
+  uncontrolledBleedingAfter10Min: "Uncontrolled bleeding after 10 minutes of pressure",
+  dialImmediatelyIfSevereBleeding: "Dial 112 immediately if bleeding is severe or doesn't stop.",
+  applyFirmPressure: "Apply Firm Pressure",
+  useCleanClothGauzeHand: "Use clean cloth, gauze, or hand to press directly on the wound.",
+  elevateLimbIfPossible: "Elevate the Limb (if possible)",
+  raiseBleedingArmLegAboveHeart: "Raise the bleeding arm or leg above heart level unless it causes more pain.",
+  doNotRemoveCloth: "Do Not Remove Cloth",
+  addMoreLayersDontRemoveOriginal: "If blood soaks through, add more layers, but don't remove the original cloth.",
+  keepPersonCalmStill: "Keep Person Calm and Still",
+  layDownIfDizzyBlanketIfCold: "Lay them down if feeling dizzy or weak. Cover with a blanket if pale or cold.",
+  saySevereBleeding: "Say: \"Uncontrolled bleeding — [body part], blood not stopping.\""
 };
 
 // Hindi translations (Complete and tested)
@@ -194,7 +224,7 @@ const hindiTranslations: Translations = {
   cardiacArrest: "हृदयाघात",
   stroke: "स्ट्रोक",
   heartAttack: "हार्ट अटैक",
-  sepsis: "सेप्सिस",
+  severeBleeding: "गंभीर रक्तस्राव",
   emergencyContacts: "आपातकालीन संपर्क",
   call112: "112 पर कॉल करें",
   contacts: "संपर्क",
@@ -276,7 +306,22 @@ const hindiTranslations: Translations = {
   sayCardiacArrest: "कहें: \"संभावित हृदयाघात, रोगी बेहोश और सांस नहीं ले रहा।\"",
   sayStroke: "कहें: \"संभावित स्ट्रोक - चेहरा लटक रहा और बोली अस्पष्ट।\"",
   sayHeartAttack: "कहें: \"छाती में दर्द, संदिग्ध हार्ट अटैक।\"",
-  saySepsis: "कहें: \"संभावित सेप्सिस - भ्रम और तेज सांस के साथ संक्रमण।\""
+  // Severe Bleeding specific translations
+  bloodFlowingHeavily: "घाव से तेजी से खून बह रहा है",
+  bloodSoakingThroughClothing: "खून कपड़ों या पट्टियों में भीग रहा है",
+  spurtingBlood: "उछलता हुआ खून (धमनी से खून निकलने का संकेत हो सकता है)",
+  personBecomingPaleWeak: "व्यक्ति पीला, कमजोर, या चक्कर महसूस कर रहा है",
+  uncontrolledBleedingAfter10Min: "10 मिनट दबाने के बाद भी बेकाबू खून बहना",
+  dialImmediatelyIfSevereBleeding: "यदि खून बहना गंभीर है या नहीं रुक रहा तो तुरंत 112 डायल करें।",
+  applyFirmPressure: "मजबूत दबाव डालें",
+  useCleanClothGauzeHand: "घाव पर सीधे दबाने के लिए साफ कपड़ा, पट्टी, या हाथ का उपयोग करें।",
+  elevateLimbIfPossible: "अंग को ऊंचा करें (यदि संभव हो)",
+  raiseBleedingArmLegAboveHeart: "खून बह रहे हाथ या पैर को दिल के स्तर से ऊंचा उठाएं जब तक दर्द न बढ़े।",
+  doNotRemoveCloth: "कपड़ा न हटाएं",
+  addMoreLayersDontRemoveOriginal: "यदि खून भीग जाए तो और परतें जोड़ें, लेकिन मूल कपड़ा न हटाएं।",
+  keepPersonCalmStill: "व्यक्ति को शांत और स्थिर रखें",
+  layDownIfDizzyBlanketIfCold: "यदि चक्कर आ रहा या कमजोरी महसूस हो रहा है तो लिटाएं। पीला या ठंडा लगे तो कंबल ओढ़ाएं।",
+  saySevereBleeding: "कहें: \"बेकाबू खून बह रहा है — [शरीर का हिस्सा], खून नहीं रुक रहा।\""
 };
 
 // Telugu translations (Complete and tested)
@@ -287,7 +332,7 @@ const teluguTranslations: Translations = {
   cardiacArrest: "కార్డియాక్ అరెస్ట్",
   stroke: "స్ట్రోక్",
   heartAttack: "హార్ట్ అటాక్",
-  sepsis: "సెప్సిస్",
+  severeBleeding: "తీవ్రమైన రక్తస్రావం",
   emergencyContacts: "అత్యవసర పరిచయాలు",
   call112: "112 కాల్ చేయండి",
   contacts: "పరిచయాలు",
@@ -369,7 +414,22 @@ const teluguTranslations: Translations = {
   sayCardiacArrest: "చెప్పండి: \"సంభావ్య కార్డియాక్ అరెస్ట్, రోగి అపస్మారక స్థితిలో మరియు శ్వాసించడం లేదు.\"",
   sayStroke: "చెప్పండి: \"సంభావ్య స్ట్రోక్ - ముఖం వేలాడుతోంది మరియు మాట అస్పష్టంగా ఉంది.\"",
   sayHeartAttack: "చెప్పండి: \"ఛాతీ నొప్పి, అనుమానిత హృదయాఘాతం.\"",
-  saySepsis: "చెప్పండి: \"సంభావ్య సెప్సిస్ - గందరగోళం మరియు వేగవంతమైన శ్వాసతో సంక్రమణ.\""
+  // Severe Bleeding specific translations
+  bloodFlowingHeavily: "గాయం నుండి ఎక్కువగా రక్తం కారుచున్నది",
+  bloodSoakingThroughClothing: "రక్తం బట్టలు లేదా కట్టలలో నానుచున్నది",
+  spurtingBlood: "చిమ్మే రక్తం (ధమనిలో రక్తస్రావం అయి ఉండవచ్చు)",
+  personBecomingPaleWeak: "వ్యక్తి లేతగా, బలహీనంగా లేదా తలతిరుగుట అనుభవిస్తున్నారు",
+  uncontrolledBleedingAfter10Min: "10 నిమిషాల ఒత్తిడి తర్వాత కూడా అదుపు లేని రక్తస్రావం",
+  dialImmediatelyIfSevereBleeding: "రక్తస్రావం తీవ్రంగా ఉంటే లేదా ఆగకపోతే వెంటనే 112 డయల్ చేయండి।",
+  applyFirmPressure: "గట్టి ఒత్తిడి వేయండి",
+  useCleanClothGauzeHand: "గాయంపై నేరుగా నొక్కడానికి శుభ్రమైన వస్త్రం, గేజ్ లేదా చేతిని ఉపయోగించండి।",
+  elevateLimbIfPossible: "అవయవాన్ని పైకి లేపండి (వీలైతే)",
+  raiseBleedingArmLegAboveHeart: "రక్తస్రావం అయిన చేయి లేదా కాలును హృదయ స్థాయికంటే పైకి లేపండి, నొప్పి పెరగకుంటే।",
+  doNotRemoveCloth: "వస్త్రాన్ని తొలగించవద్దు",
+  addMoreLayersDontRemoveOriginal: "రక్తం నానితే మరిన్ని పొరలు జోడించండి, కానీ అసలు వస్త్రాన్ని తొలగించవద్దు।",
+  keepPersonCalmStill: "వ్యక్తిని ప్రశాంతంగా మరియు నిశ్చలంగా ఉంచండి",
+  layDownIfDizzyBlanketIfCold: "తలతిరుగుట లేదా బలహీనత అనిపిస్తే వారిని పడుకోబెట్టండి। లేతగా లేదా చల్లగా ఉంటే దుప్పటితో కప్పండి।",
+  saySevereBleeding: "చెప్పండి: \"అదుపు లేని రక్తస్రావం — [శరీర భాగం], రక్తం ఆగట్లేదు.\""
 };
 
 // Translation mapping with fallback
