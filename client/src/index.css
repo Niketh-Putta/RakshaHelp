@@ -49,6 +49,18 @@
   --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+
+  /* Emergency colors for medical conditions */
+  --emergency-red: 0 84% 60%;
+  --emergency-red-hover: 0 84% 50%;
+  --emergency-orange: 25 95% 53%;
+  --emergency-orange-hover: 25 95% 43%;
+  --emergency-yellow: 45 93% 47%;
+  --emergency-yellow-hover: 45 93% 37%;
+  --emergency-purple: 258 90% 66%;
+  --emergency-purple-hover: 258 90% 56%;
+  --emergency-green: 142 76% 36%;
+  --emergency-green-hover: 142 76% 26%;
 }
 
 .dark {
