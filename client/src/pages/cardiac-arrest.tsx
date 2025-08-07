@@ -3,6 +3,9 @@ import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
+import chestCompressionImg from '/src/assets/chest-compression-technique.png';
+import aedPlacementImg from '/src/assets/aed-placement.png';
+import cprContinuousImg from '/src/assets/cpr-continuous.png';
 
 export default function CardiacArrest() {
   const { translations } = useLanguage();
@@ -104,7 +107,7 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="@assets/image_1754561288976.png" 
+                src={chestCompressionImg} 
                 alt="Proper chest compression techniques - hand positioning and depth" 
                 className="w-full h-48 object-contain rounded mb-2"
               />
@@ -127,7 +130,7 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="@assets/image_1754561433861.png" 
+                src={aedPlacementImg} 
                 alt="AED (Automated External Defibrillator) with pad placement on patient" 
                 className="w-full h-48 object-contain rounded mb-2"
               />
@@ -150,7 +153,7 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="@assets/image_1754561772568.png" 
+                src={cprContinuousImg} 
                 alt="Healthcare professional performing CPR chest compressions on patient" 
                 className="w-full h-48 object-contain rounded mb-2"
               />
