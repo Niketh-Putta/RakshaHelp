@@ -3,7 +3,7 @@ import { ArrowLeft, Phone, Activity, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import heartAttackCall112Img from '/src/assets/heart-attack-call-112.png';
+import emergencyCall112Img from '/src/assets/emergency-call-112-standard.png';
 import heartAttackAspirinImg from '/src/assets/heart-attack-aspirin.png';
 import heartAttackWPositionImg from '/src/assets/heart-attack-w-position.png';
 import heartAttackMonitorVitalsImg from '/src/assets/heart-attack-monitor-vitals.png';
@@ -81,11 +81,11 @@ export default function HeartAttack() {
             </p>
             <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
               <img 
-                src={heartAttackCall112Img} 
-                alt="Emergency helpline 112 - Uttar Pradesh emergency services contact number" 
+                src={emergencyCall112Img} 
+                alt="Emergency services call 112 - India emergency response logo" 
                 className="w-full h-40 object-contain rounded mb-2"
               />
-              <p className="text-xs text-yellow-600">Call 112 immediately - Heart attack emergency</p>
+              <p className="text-xs text-yellow-600">Call 112 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>

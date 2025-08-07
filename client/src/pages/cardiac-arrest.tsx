@@ -3,6 +3,7 @@ import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
+import emergencyCall112Img from '/src/assets/emergency-call-112-standard.png';
 import chestCompressionImg from '/src/assets/chest-compression-technique.png';
 import aedPlacementImg from '/src/assets/aed-placement.png';
 import cprContinuousImg from '/src/assets/cpr-continuous.png';
@@ -84,11 +85,11 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="/images/emergency-call.svg" 
-                alt="Emergency call illustration" 
-                className="w-full h-32 object-contain rounded mb-2"
+                src={emergencyCall112Img} 
+                alt="Emergency services call 112 - India emergency response logo" 
+                className="w-full h-40 object-contain rounded mb-2"
               />
-              <p className="text-xs text-red-600">{translations.sayCardiacArrest}</p>
+              <p className="text-xs text-red-600">Call 112 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>

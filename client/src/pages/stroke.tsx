@@ -3,7 +3,7 @@ import { ArrowLeft, Phone, Brain, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
-import call112Img from '/src/assets/call-112-emergency.png';
+import emergencyCall112Img from '/src/assets/emergency-call-112-standard.png';
 import strokeFastTestImg from '/src/assets/stroke-fast-test.png';
 import strokeRecoveryPositionImg from '/src/assets/stroke-recovery-position.png';
 import strokeNoFoodDrinkImg from '/src/assets/stroke-no-food-drink.png';
@@ -81,11 +81,11 @@ export default function Stroke() {
             </p>
             <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
               <img 
-                src={call112Img} 
-                alt="Emergency helpline 112 - Uttar Pradesh emergency services contact number" 
+                src={emergencyCall112Img} 
+                alt="Emergency services call 112 - India emergency response logo" 
                 className="w-full h-40 object-contain rounded mb-2"
               />
-              <p className="text-xs text-orange-600">Call 112 immediately - Emergency services hotline</p>
+              <p className="text-xs text-orange-600">Call 112 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>
