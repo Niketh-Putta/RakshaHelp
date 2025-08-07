@@ -2,12 +2,15 @@ import { Heart, Brain, Activity, Thermometer, Phone, Users, Wifi } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSelector } from "@/components/language-selector";
+import { ContactsModal } from "@/components/contacts-modal";
 import { useLanguage } from "@/hooks/use-language";
 import { callEmergency, logEmergencyAccess } from "@/lib/pwa";
 import { Link } from "wouter";
+import { useState } from "react";
 
 export default function Home() {
   const { translations } = useLanguage();
+  const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
 
   const handleEmergencyClick = (type: string) => {
     logEmergencyAccess(type, translations.language || 'en');
@@ -18,7 +21,7 @@ export default function Home() {
   };
 
   const handleShowContacts = () => {
-    alert('Emergency contacts functionality - to be implemented');
+    setIsContactsModalOpen(true);
   };
 
   return (
@@ -139,6 +142,12 @@ export default function Home() {
           </span>
         </div>
       </div>
+
+      {/* Contacts Modal */}
+      <ContactsModal 
+        isOpen={isContactsModalOpen} 
+        onClose={() => setIsContactsModalOpen(false)} 
+      />
     </div>
   );
 }
