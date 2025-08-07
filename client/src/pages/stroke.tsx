@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
 import call112Img from '/src/assets/call-112-emergency.png';
 import strokeFastTestImg from '/src/assets/stroke-fast-test.png';
+import strokeRecoveryPositionImg from '/src/assets/stroke-recovery-position.png';
+import strokeNoFoodDrinkImg from '/src/assets/stroke-no-food-drink.png';
 
 export default function Stroke() {
   const { translations } = useLanguage();
@@ -123,8 +125,13 @@ export default function Stroke() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.layOnSideElevated}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Person lying on side with pillow]</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <img 
+                src={strokeRecoveryPositionImg} 
+                alt="Recovery position - Person lying on side with hand under chin, leg bent for support" 
+                className="w-full h-48 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-orange-600">Recovery position: Hand under chin to keep mouth open, leg bent to support position</p>
             </div>
           </CardContent>
         </Card>
@@ -141,8 +148,13 @@ export default function Stroke() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.mayCauseChoking}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Crossed-out spoon or water icon]</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <img 
+                src={strokeNoFoodDrinkImg} 
+                alt="No food or drinks - Prohibition symbol over hamburger and drink" 
+                className="w-full h-32 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-orange-600">Do not give food or drinks - May cause choking in stroke patients</p>
             </div>
           </CardContent>
         </Card>
