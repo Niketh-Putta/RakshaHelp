@@ -19,7 +19,11 @@ export function useLanguage() {
   }, [language]);
 
   const changeLanguage = (newLanguage: Language) => {
+    console.log('useLanguage: Changing language from', language, 'to', newLanguage);
     setLanguage(newLanguage);
+    setTranslations(getTranslation(newLanguage));
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
+    console.log('useLanguage: Language changed to', newLanguage);
   };
 
   return {

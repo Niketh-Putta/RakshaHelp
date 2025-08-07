@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Globe, Check } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
-import { Button } from "@/components/ui/button";
 import { Language } from "@/lib/translations";
 
 export function LanguageSelector() {
@@ -9,7 +8,9 @@ export function LanguageSelector() {
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(language);
 
   const handleLanguageChange = () => {
+    console.log('Changing language to:', selectedLanguage);
     changeLanguage(selectedLanguage);
+    console.log('Language changed');
   };
 
   return (
@@ -17,7 +18,10 @@ export function LanguageSelector() {
       <Globe className="text-gray-600 h-5 w-5" />
       <select 
         value={selectedLanguage} 
-        onChange={(e) => setSelectedLanguage(e.target.value as Language)}
+        onChange={(e) => {
+          console.log('Selected language:', e.target.value);
+          setSelectedLanguage(e.target.value as Language);
+        }}
         className="bg-white border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-auto min-w-[180px]"
         data-testid="language-selector"
       >
@@ -27,14 +31,14 @@ export function LanguageSelector() {
           </option>
         ))}
       </select>
-      <Button
+      <button
         onClick={handleLanguageChange}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm rounded-lg flex items-center space-x-1"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm rounded-lg flex items-center space-x-1 font-medium"
         data-testid="language-change-button"
       >
         <Check className="h-4 w-4" />
         <span>Apply</span>
-      </Button>
+      </button>
     </div>
   );
 }
