@@ -3,6 +3,7 @@ import { ArrowLeft, Phone, Brain, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
+import call112Img from '/src/assets/call-112-emergency.png';
 
 export default function Stroke() {
   const { translations } = useLanguage();
@@ -75,8 +76,13 @@ export default function Stroke() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.dialAsSoonAsStroke}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Someone on phone with concern]</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <img 
+                src={call112Img} 
+                alt="Emergency helpline 112 - Uttar Pradesh emergency services contact number" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-orange-600">Call 112 immediately - Emergency services hotline</p>
             </div>
           </CardContent>
         </Card>
