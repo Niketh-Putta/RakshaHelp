@@ -150,9 +150,9 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=200&fit=crop&crop=center" 
-                alt="Emergency medical team arriving" 
-                className="w-full h-20 object-cover rounded mb-2"
+                src="@assets/image_1754561772568.png" 
+                alt="Healthcare professional performing CPR chest compressions on patient" 
+                className="w-full h-48 object-contain rounded mb-2"
               />
               <p className="text-xs text-red-600">Keep going until help arrives</p>
             </div>
