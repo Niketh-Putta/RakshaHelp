@@ -1,0 +1,76 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- CPR illustration -->
+  <defs>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1d5db;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="300" fill="#fef7ed"/>
+  
+  <!-- Person lying down -->
+  <!-- Head -->
+  <ellipse cx="100" cy="120" rx="25" ry="20" fill="url(#bodyGradient)" filter="url(#shadow)"/>
+  
+  <!-- Body/torso -->
+  <rect x="125" y="100" width="150" height="80" rx="15" ry="15" fill="url(#bodyGradient)" filter="url(#shadow)"/>
+  
+  <!-- Arms -->
+  <ellipse cx="115" cy="140" rx="12" ry="35" fill="url(#bodyGradient)"/>
+  <ellipse cx="285" cy="140" rx="12" ry="35" fill="url(#bodyGradient)"/>
+  
+  <!-- Legs -->
+  <rect x="140" y="180" width="25" height="60" rx="12" ry="12" fill="url(#bodyGradient)"/>
+  <rect x="235" y="180" width="25" height="60" rx="12" ry="12" fill="url(#bodyGradient)"/>
+  
+  <!-- Rescuer hands positioned for CPR -->
+  <!-- Bottom hand -->
+  <ellipse cx="200" cy="135" rx="20" ry="25" fill="url(#handGradient)" filter="url(#shadow)"/>
+  
+  <!-- Top hand -->
+  <ellipse cx="200" cy="125" rx="18" ry="22" fill="#f59e0b" filter="url(#shadow)"/>
+  
+  <!-- Compression indicator -->
+  <g opacity="0.8">
+    <!-- Pressure lines -->
+    <path d="M180 110 L220 110" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <path d="M180 115 L220 115" stroke="#dc2626" stroke-width="2" opacity="0.7"/>
+    <path d="M185 120 L215 120" stroke="#dc2626" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626" />
+    </marker>
+  </defs>
+  
+  <!-- Compression depth indicator -->
+  <text x="230" y="125" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">5-6cm</text>
+  <text x="230" y="138" fill="#dc2626" font-family="Arial, sans-serif" font-size="10">depth</text>
+  
+  <!-- Rate indicator -->
+  <circle cx="320" cy="80" r="35" fill="#dc2626" opacity="0.9"/>
+  <text x="320" y="75" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">100-120</text>
+  <text x="320" y="88" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">per min</text>
+  
+  <!-- Hand position guide -->
+  <text x="200" y="270" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Push Hard & Fast</text>
+  <text x="200" y="285" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">Center of chest, between nipples</text>
+  
+  <!-- Movement indicator lines -->
+  <g stroke="#dc2626" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M200 90 L200 105" marker-end="url(#arrowhead)"/>
+    <path d="M200 145 L200 160" marker-start="url(#arrowhead)"/>
+  </g>
+</svg>
