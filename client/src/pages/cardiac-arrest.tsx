@@ -83,7 +83,7 @@ export default function CardiacArrest() {
               <img 
                 src="/images/emergency-call.svg" 
                 alt="Emergency call illustration" 
-                className="w-full h-20 object-contain rounded mb-2"
+                className="w-full h-32 object-contain rounded mb-2"
               />
               <p className="text-xs text-red-600">{translations.sayCardiacArrest}</p>
             </div>
@@ -106,7 +106,7 @@ export default function CardiacArrest() {
               <img 
                 src="/images/cpr-technique.svg" 
                 alt="CPR technique illustration" 
-                className="w-full h-20 object-contain rounded mb-2"
+                className="w-full h-40 object-cover rounded mb-2"
               />
               <p className="text-xs text-red-600">Push 5-6cm deep, 100-120 per minute</p>
             </div>
@@ -129,7 +129,7 @@ export default function CardiacArrest() {
               <img 
                 src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop&crop=center" 
                 alt="AED defibrillator device" 
-                className="w-full h-20 object-cover rounded mb-2"
+                className="w-full h-40 object-cover rounded mb-2"
               />
               <p className="text-xs text-red-600">Attach pads and follow device instructions</p>
             </div>
