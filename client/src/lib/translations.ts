@@ -276,20 +276,144 @@ const hindiTranslations: Translations = {
   saySepsis: "कहें: \"संभावित सेप्सिस - भ्रम और तेज सांस के साथ संक्रमण।\""
 };
 
-// Create default translations for all other languages using English as fallback
+// Create translations for all languages
 const createDefaultTranslations = (): Record<Language, Translations> => {
-  const allLanguages: Language[] = ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'kn', 'ml', 'gu', 'pa', 'or', 'as', 'ur', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'ko', 'ar'];
-  
   const translations: Record<Language, Translations> = {} as Record<Language, Translations>;
   
-  allLanguages.forEach(lang => {
-    if (lang === 'en') {
-      translations[lang] = englishTranslations;
-    } else if (lang === 'hi') {
-      translations[lang] = hindiTranslations;
-    } else {
-      translations[lang] = englishTranslations; // Use English as fallback for other languages
-    }
+  // English
+  translations.en = englishTranslations;
+  
+  // Hindi
+  translations.hi = hindiTranslations;
+  
+  // Bengali
+  translations.bn = {
+    ...englishTranslations,
+    appTitle: "জরুরি প্রাথমিক চিকিৎসা",
+    appSubtitle: "গ্রামীণ ভারতের জন্য জীবনরক্ষাকারী নির্দেশনা",
+    language: "ভাষা",
+    cardiacArrest: "কার্ডিয়াক অ্যারেস্ট",
+    stroke: "স্ট্রোক",
+    heartAttack: "হার্ট অ্যাটাক",
+    sepsis: "সেপসিস",
+    call112Now: "এখনই ১১২ কল করুন",
+    warningSigns: "সতর্কতা চিহ্ন",
+    stepByStepActions: "ধাপে ধাপে কার্যক্রম"
+  };
+  
+  // Tamil
+  translations.ta = {
+    ...englishTranslations,
+    appTitle: "அவசர முதலுதவி",
+    appSubtitle: "கிராமப்புற இந்தியாவிற்கான உயிர்காக்கும் வழிகாட்டுதல்",
+    language: "மொழி",
+    cardiacArrest: "இதய நிறுத்தம்",
+    stroke: "பக்கவாதம்",
+    heartAttack: "மாரடைப்பு",
+    sepsis: "செப்சிஸ்",
+    call112Now: "இப்போதே 112 அழைக்கவும்",
+    warningSigns: "எச்சரிக்கை அறிகுறிகள்",
+    stepByStepActions: "படிப்படியான செயல்கள்"
+  };
+  
+  // Telugu
+  translations.te = {
+    ...englishTranslations,
+    appTitle: "అత్యవసర ప్రథమ చికిత్స",
+    appSubtitle: "గ్రామీణ భారతదేశం కోసం ప్రాణరక్షక మార్గదర్శకత్వం",
+    language: "భాష",
+    cardiacArrest: "కార్డియాక్ అరెస్ట్",
+    stroke: "స్ట్రోక్",
+    heartAttack: "హార్ట్ అటాక్",
+    sepsis: "సెప్సిస్",
+    call112Now: "ఇప్పుడే 112 కాల్ చేయండి",
+    warningSigns: "హెచ్చరిక సంకేతాలు",
+    stepByStepActions: "దశల వారీ చర్యలు"
+  };
+  
+  // Marathi
+  translations.mr = {
+    ...englishTranslations,
+    appTitle: "आपत्कालीन प्राथमिक उपचार",
+    appSubtitle: "ग्रामीण भारतासाठी जीवनरक्षक मार्गदर्शन",
+    language: "भाषा",
+    cardiacArrest: "कार्डियाक अरेस्ट",
+    stroke: "स्ट्रोक",
+    heartAttack: "हार्ट अटैक",
+    sepsis: "सेप्सिस",
+    call112Now: "आताच 112 वर कॉल करा",
+    warningSigns: "चेतावणीची चिन्हे",
+    stepByStepActions: "पायरी-पायरीच्या कृती"
+  };
+  
+  // Spanish
+  translations.es = {
+    ...englishTranslations,
+    appTitle: "Primeros Auxilios de Emergencia",
+    appSubtitle: "Guía que salva vidas para la India rural",
+    language: "Idioma",
+    cardiacArrest: "Paro Cardíaco",
+    stroke: "Accidente Cerebrovascular",
+    heartAttack: "Ataque al Corazón",
+    sepsis: "Sepsis",
+    call112Now: "LLAMAR AL 112 AHORA",
+    warningSigns: "Señales de Advertencia",
+    stepByStepActions: "Acciones Paso a Paso"
+  };
+  
+  // French
+  translations.fr = {
+    ...englishTranslations,
+    appTitle: "Premiers Secours d'Urgence",
+    appSubtitle: "Guidance vitale pour l'Inde rurale",
+    language: "Langue",
+    cardiacArrest: "Arrêt Cardiaque",
+    stroke: "Accident Vasculaire Cérébral",
+    heartAttack: "Crise Cardiaque",
+    sepsis: "Septicémie",
+    call112Now: "APPELEZ LE 112 MAINTENANT",
+    warningSigns: "Signes d'Alerte",
+    stepByStepActions: "Actions Étape par Étape"
+  };
+  
+  // German
+  translations.de = {
+    ...englishTranslations,
+    appTitle: "Notfall Erste Hilfe",
+    appSubtitle: "Lebensrettende Anleitung für ländliches Indien",
+    language: "Sprache",
+    cardiacArrest: "Herzstillstand",
+    stroke: "Schlaganfall",
+    heartAttack: "Herzinfarkt",
+    sepsis: "Sepsis",
+    call112Now: "JETZT 112 ANRUFEN",
+    warningSigns: "Warnzeichen",
+    stepByStepActions: "Schrittweise Maßnahmen"
+  };
+  
+  // Add remaining languages with basic translations
+  const remainingLanguages: Language[] = ['kn', 'ml', 'gu', 'pa', 'or', 'as', 'ur', 'it', 'pt', 'ru', 'zh', 'ja', 'ko', 'ar'];
+  
+  remainingLanguages.forEach(lang => {
+    translations[lang] = {
+      ...englishTranslations,
+      // Keep most content in English but translate key UI elements
+      appTitle: englishTranslations.appTitle,
+      language: lang === 'kn' ? "ಭಾಷೆ" :
+               lang === 'ml' ? "ഭാഷ" :
+               lang === 'gu' ? "ભાષા" :
+               lang === 'pa' ? "ਭਾਸ਼ਾ" :
+               lang === 'or' ? "ଭାଷା" :
+               lang === 'as' ? "ভাষা" :
+               lang === 'ur' ? "زبان" :
+               lang === 'it' ? "Lingua" :
+               lang === 'pt' ? "Idioma" :
+               lang === 'ru' ? "Язык" :
+               lang === 'zh' ? "语言" :
+               lang === 'ja' ? "言語" :
+               lang === 'ko' ? "언어" :
+               lang === 'ar' ? "اللغة" : "Language"
+    };
   });
   
   return translations;

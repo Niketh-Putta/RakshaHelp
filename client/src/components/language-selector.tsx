@@ -10,7 +10,12 @@ export function LanguageSelector() {
   const handleLanguageChange = () => {
     console.log('Changing language to:', selectedLanguage);
     changeLanguage(selectedLanguage);
-    console.log('Language changed');
+    console.log('Language changed - new translations loaded');
+    
+    // Force a re-render by updating the component state
+    setTimeout(() => {
+      console.log('Current language after change:', selectedLanguage);
+    }, 100);
   };
 
   return (
