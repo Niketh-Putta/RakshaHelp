@@ -3,6 +3,10 @@ import { ArrowLeft, Phone, Activity, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
+import heartAttackCall112Img from '/src/assets/heart-attack-call-112.png';
+import heartAttackAspirinImg from '/src/assets/heart-attack-aspirin.png';
+import heartAttackWPositionImg from '/src/assets/heart-attack-w-position.png';
+import heartAttackMonitorVitalsImg from '/src/assets/heart-attack-monitor-vitals.png';
 
 export default function HeartAttack() {
   const { translations } = useLanguage();
@@ -75,8 +79,13 @@ export default function HeartAttack() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.dialRightAway}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Person on phone, clutching chest]</p>
+            <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+              <img 
+                src={heartAttackCall112Img} 
+                alt="Emergency helpline 112 - Uttar Pradesh emergency services contact number" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-yellow-600">Call 112 immediately - Heart attack emergency</p>
             </div>
           </CardContent>
         </Card>
@@ -93,8 +102,13 @@ export default function HeartAttack() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.chewAspirinUnlessAllergic}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Pill and water symbol]</p>
+            <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+              <img 
+                src={heartAttackAspirinImg} 
+                alt="Aspirin medication box - Give aspirin for heart attack" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-yellow-600">Give aspirin if available - Chew slowly unless allergic</p>
             </div>
           </CardContent>
         </Card>
@@ -106,13 +120,18 @@ export default function HeartAttack() {
               <div className="bg-[hsl(var(--emergency-yellow))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
-              <h3 className="font-bold text-lg">{translations.stayCalmRest}</h3>
+              <h3 className="font-bold text-lg">Get them in W Position</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              {translations.keepSeatedLoosenClothing}
+              Seat patient on floor in W position - knees bent, back supported against wall if possible
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Calm person seated with hand on heart]</p>
+            <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+              <img 
+                src={heartAttackWPositionImg} 
+                alt="Person seated on floor in W position - Heart attack recovery position" 
+                className="w-full h-48 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-yellow-600">Seat patient on floor in W position - Knees bent, back supported</p>
             </div>
           </CardContent>
         </Card>
@@ -129,8 +148,13 @@ export default function HeartAttack() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.readyToStartCPR}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Watch chest for breathing or heart monitor icon]</p>
+            <div className="bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+              <img 
+                src={heartAttackMonitorVitalsImg} 
+                alt="Healthcare professional monitoring patient's vital signs" 
+                className="w-full h-48 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-yellow-600">Monitor breathing and pulse - Be ready to start CPR if needed</p>
             </div>
           </CardContent>
         </Card>
