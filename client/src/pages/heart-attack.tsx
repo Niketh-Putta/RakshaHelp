@@ -23,7 +23,7 @@ export default function HeartAttack() {
         <div className="flex items-center space-x-3">
           <Activity className="h-8 w-8 text-[hsl(var(--emergency-yellow))]" />
           <h1 className="text-xl font-bold text-[hsl(var(--emergency-yellow))]" data-testid="text-page-title">
-            Heart Attack
+            {translations.heartAttack}
           </h1>
         </div>
         <div className="w-10" />
@@ -35,25 +35,25 @@ export default function HeartAttack() {
           <div className="flex items-center mb-3">
             <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-yellow))] mr-2" />
             <h2 className="text-lg font-bold text-[hsl(var(--emergency-yellow))]" data-testid="text-warning-signs-title">
-              Warning Signs
+              {translations.warningSigns}
             </h2>
           </div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-yellow))] mr-2">•</span>
-              <span>Chest pain or pressure</span>
+              <span>{translations.chestPainPressure}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-yellow))] mr-2">•</span>
-              <span>Pain in arms, neck, jaw, or back</span>
+              <span>{translations.painInArmsNeckJaw}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-yellow))] mr-2">•</span>
-              <span>Shortness of breath</span>
+              <span>{translations.shortnessOfBreath}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-yellow))] mr-2">•</span>
-              <span>Cold sweat, nausea, lightheadedness</span>
+              <span>{translations.coldSweatNausea}</span>
             </li>
           </ul>
         </CardContent>
@@ -61,7 +61,7 @@ export default function HeartAttack() {
 
       {/* Step-by-Step Instructions */}
       <div className="space-y-4 mb-6">
-        <h2 className="text-lg font-bold text-gray-800 px-2">Step-by-Step Actions</h2>
+        <h2 className="text-lg font-bold text-gray-800 px-2">{translations.stepByStepActions}</h2>
         
         {/* Step 1 */}
         <Card className="border-l-4 border-l-[hsl(var(--emergency-yellow))]">
@@ -70,10 +70,10 @@ export default function HeartAttack() {
               <div className="bg-[hsl(var(--emergency-yellow))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 1
               </div>
-              <h3 className="font-bold text-lg">Call Emergency</h3>
+              <h3 className="font-bold text-lg">{translations.callEmergency}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Dial 112 right away. Do not delay.
+              {translations.dialRightAway}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Person on phone, clutching chest]</p>
@@ -88,10 +88,10 @@ export default function HeartAttack() {
               <div className="bg-[hsl(var(--emergency-yellow))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 2
               </div>
-              <h3 className="font-bold text-lg">Give Aspirin</h3>
+              <h3 className="font-bold text-lg">{translations.giveAspirin}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Chew 1 adult aspirin (325mg) unless allergic. No kids.
+              {translations.chewAspirinUnlessAllergic}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Pill and water symbol]</p>
@@ -106,10 +106,10 @@ export default function HeartAttack() {
               <div className="bg-[hsl(var(--emergency-yellow))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
-              <h3 className="font-bold text-lg">Stay Calm & Rest</h3>
+              <h3 className="font-bold text-lg">{translations.stayCalmRest}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Keep person seated, loosen tight clothing.
+              {translations.keepSeatedLoosenClothing}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Calm person seated with hand on heart]</p>
@@ -124,10 +124,10 @@ export default function HeartAttack() {
               <div className="bg-[hsl(var(--emergency-yellow))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 4
               </div>
-              <h3 className="font-bold text-lg">Monitor Breathing</h3>
+              <h3 className="font-bold text-lg">{translations.monitorVitalSigns}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Be ready to start CPR if they collapse.
+              {translations.readyToStartCPR}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Watch chest for breathing or heart monitor icon]</p>
@@ -144,10 +144,10 @@ export default function HeartAttack() {
           data-testid="button-emergency-call"
         >
           <Phone className="mr-2 h-6 w-6" />
-          CALL 112 NOW
+          {translations.call112Now}
         </Button>
         <p className="text-center text-xs text-gray-600 mt-2">
-          Say: "Chest pain, suspected heart attack."
+          {translations.sayHeartAttack}
         </p>
       </div>
 

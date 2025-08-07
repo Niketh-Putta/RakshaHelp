@@ -23,7 +23,7 @@ export default function Stroke() {
         <div className="flex items-center space-x-3">
           <Brain className="h-8 w-8 text-[hsl(var(--emergency-orange))]" />
           <h1 className="text-xl font-bold text-[hsl(var(--emergency-orange))]" data-testid="text-page-title">
-            Stroke
+            {translations.stroke}
           </h1>
         </div>
         <div className="w-10" />
@@ -35,25 +35,25 @@ export default function Stroke() {
           <div className="flex items-center mb-3">
             <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-orange))] mr-2" />
             <h2 className="text-lg font-bold text-[hsl(var(--emergency-orange))]" data-testid="text-warning-signs-title">
-              Warning Signs (Use FAST)
+              {translations.warningSigns} (Use FAST)
             </h2>
           </div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-orange))] mr-2">•</span>
-              <span><strong>Face</strong> drooping on one side</span>
+              <span><strong>{translations.faceDrooping}</strong> {translations.faceDroopingOneSide}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-orange))] mr-2">•</span>
-              <span><strong>Arm</strong> weakness</span>
+              <span><strong>{translations.armWeakness}</strong> {translations.armWeaknessText}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-orange))] mr-2">•</span>
-              <span><strong>Speech</strong> difficulty</span>
+              <span><strong>{translations.speechDifficulty}</strong> {translations.speechDifficultyText}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-orange))] mr-2">•</span>
-              <span><strong>Time</strong> to act fast</span>
+              <span><strong>{translations.timeToCall}</strong> {translations.timeToActFast}</span>
             </li>
           </ul>
         </CardContent>
@@ -61,7 +61,7 @@ export default function Stroke() {
 
       {/* Step-by-Step Instructions */}
       <div className="space-y-4 mb-6">
-        <h2 className="text-lg font-bold text-gray-800 px-2">Step-by-Step Actions</h2>
+        <h2 className="text-lg font-bold text-gray-800 px-2">{translations.stepByStepActions}</h2>
         
         {/* Step 1 */}
         <Card className="border-l-4 border-l-[hsl(var(--emergency-orange))]">
@@ -70,10 +70,10 @@ export default function Stroke() {
               <div className="bg-[hsl(var(--emergency-orange))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 1
               </div>
-              <h3 className="font-bold text-lg">Call Emergency</h3>
+              <h3 className="font-bold text-lg">{translations.callEmergency}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Dial 112 as soon as any stroke signs appear.
+              {translations.dialAsSoonAsStroke}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Someone on phone with concern]</p>
@@ -88,10 +88,10 @@ export default function Stroke() {
               <div className="bg-[hsl(var(--emergency-orange))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 2
               </div>
-              <h3 className="font-bold text-lg">FAST Test</h3>
+              <h3 className="font-bold text-lg">{translations.fastTest}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Ask person to smile, raise both arms, and speak a sentence.
+              {translations.askPersonSmileArms}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Icons showing smile, raised arms, speech]</p>
@@ -106,10 +106,10 @@ export default function Stroke() {
               <div className="bg-[hsl(var(--emergency-orange))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
-              <h3 className="font-bold text-lg">Keep Person Calm</h3>
+              <h3 className="font-bold text-lg">{translations.stayCalmRest}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Lay them on one side with head slightly elevated.
+              {translations.layOnSideElevated}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Person lying on side with pillow]</p>
@@ -124,10 +124,10 @@ export default function Stroke() {
               <div className="bg-[hsl(var(--emergency-orange))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 4
               </div>
-              <h3 className="font-bold text-lg">Don't give food or drink</h3>
+              <h3 className="font-bold text-lg">{translations.dontGiveFoodDrink}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              May cause choking.
+              {translations.mayCauseChoking}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Crossed-out spoon or water icon]</p>
@@ -144,10 +144,10 @@ export default function Stroke() {
           data-testid="button-emergency-call"
         >
           <Phone className="mr-2 h-6 w-6" />
-          CALL 112 NOW
+          {translations.call112Now}
         </Button>
         <p className="text-center text-xs text-gray-600 mt-2">
-          Say: "Possible stroke – face drooping and speech slurred."
+          {translations.sayStroke}
         </p>
       </div>
 

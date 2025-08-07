@@ -127,11 +127,11 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop&crop=center" 
-                alt="AED defibrillator device" 
-                className="w-full h-40 object-cover rounded mb-2"
+                src="@assets/image_1754561433861.png" 
+                alt="AED (Automated External Defibrillator) with pad placement on patient" 
+                className="w-full h-48 object-contain rounded mb-2"
               />
-              <p className="text-xs text-red-600">Attach pads and follow device instructions</p>
+              <p className="text-xs text-red-600">Follow AED voice prompts - continue compressions between shocks</p>
             </div>
           </CardContent>
         </Card>
