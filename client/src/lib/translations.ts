@@ -286,9 +286,8 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
   // Hindi
   translations.hi = hindiTranslations;
   
-  // Bengali
+  // Bengali - Complete translations
   translations.bn = {
-    ...englishTranslations,
     appTitle: "জরুরি প্রাথমিক চিকিৎসা",
     appSubtitle: "গ্রামীণ ভারতের জন্য জীবনরক্ষাকারী নির্দেশনা",
     language: "ভাষা",
@@ -298,12 +297,34 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
     sepsis: "সেপসিস",
     call112Now: "এখনই ১১২ কল করুন",
     warningSigns: "সতর্কতা চিহ্ন",
-    stepByStepActions: "ধাপে ধাপে কার্যক্রম"
+    stepByStepActions: "ধাপে ধাপে কার্যক্রম",
+    emergencyContacts: "জরুরি যোগাযোগ",
+    call112: "১১২ কল করুন",
+    contacts: "যোগাযোগ",
+    
+    // Using existing translation keys
+    suddenCollapse: "হঠাৎ পতন",
+    noPulseBreathing: "নাড়ি বা শ্বাস নেই",
+    lossOfConsciousness: "চেতনা হারানো",
+    gaspingSeizureLike: "নীল রঙের ঠোঁট বা মুখ",
+    noResponse: "প্রতিক্রিয়াহীন",
+    
+    callEmergency: "জরুরি কল করুন",
+    dialImmediately: "তৎক্ষণাত ১১২ ডায়াল করুন। লক্ষণ নিশ্চিত করার জন্য অপেক্ষা করবেন না।",
+    dontWaitToConfirm: "বলুন: \"সম্ভাব্য কার্ডিয়াক অ্যারেস্ট, রোগী অজ্ঞান এবং শ্বাস নিচ্ছে না।\"",
+    
+    startChestCompressions: "বুকে চাপ শুরু করুন",
+    pushHardFast100120: "বুকের কেন্দ্রে শক্ত এবং দ্রুত চাপ দিন (প্রতি মিনিটে ১০০-১২০ বার)।",
+    
+    useAEDIfAvailable: "AED ব্যবহার করুন যদি উপলব্ধ থাকে",
+    followAEDPrompts: "AED চালু করুন এবং ভয়েস প্রম্পট অনুসরণ করুন। চাপ দেওয়া অব্যাহত রাখুন।",
+    
+    continueCPR: "চাপ দেওয়া অব্যাহত রাখুন",
+    dontStopCompressions: "সাহায্য না আসা পর্যন্ত বা রোগী শ্বাস শুরু না করা পর্যন্ত চাপ দেওয়া বন্ধ করবেন না।"
   };
   
-  // Tamil
+  // Tamil - Complete translations
   translations.ta = {
-    ...englishTranslations,
     appTitle: "அவசர முதலுதவி",
     appSubtitle: "கிராமப்புற இந்தியாவிற்கான உயிர்காக்கும் வழிகாட்டுதல்",
     language: "மொழி",
@@ -313,12 +334,34 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
     sepsis: "செப்சிஸ்",
     call112Now: "இப்போதே 112 அழைக்கவும்",
     warningSigns: "எச்சரிக்கை அறிகுறிகள்",
-    stepByStepActions: "படிப்படியான செயல்கள்"
+    stepByStepActions: "படிப்படியான செயல்கள்",
+    emergencyContacts: "அவசர தொடர்புகள்",
+    call112: "112 அழைக்கவும்",
+    contacts: "தொடர்புகள்",
+    
+    // Using existing translation keys
+    suddenCollapse: "திடீர் சரிவு",
+    noPulseBreathing: "நாடித்துடிப்பு அல்லது சுவாசம் இல்லை",
+    lossOfConsciousness: "உணர்வு இழப்பு",
+    gaspingSeizureLike: "நீல நிற உதடுகள் அல்லது முகம்",
+    noResponse: "பதிலளிக்காமை",
+    
+    callEmergency: "அவசர அழைப்பு",
+    dialImmediately: "உடனடியாக 112 டயல் செய்யவும். அறிகுறிகளை உறுதிப்படுத்த காத்திருக்க வேண்டாம்.",
+    dontWaitToConfirm: "கூறவும்: \"சாத்தியமான இதய நிறுத்தம், நோயாளி சுயநினைவின்றி மற்றும் சுவாசிக்கவில்லை.\"",
+    
+    startChestCompressions: "மார்பு அழுத்தம் தொடங்கவும்",
+    pushHardFast100120: "மார்பின் மையத்தில் கடினமாக மற்றும் வேகமாக அழுத்தவும் (நிமிடத்திற்கு 100-120 முறை).",
+    
+    useAEDIfAvailable: "AED பயன்படுத்தவும் கிடைத்தால்",
+    followAEDPrompts: "AED ஐ இயக்கி குரல் கட்டளைகளைப் பின்பற்றவும். அழுத்தம் தொடரவும்.",
+    
+    continueCPR: "அழுத்தம் தொடரவும்",
+    dontStopCompressions: "உதவி வரும் வরை அல்லது நோயாளி சுவாசிக்க தொடங்கும் வரை அழுத்தம் நிறுத்த வேண்டாம்."
   };
   
-  // Telugu
+  // Telugu - Complete translations  
   translations.te = {
-    ...englishTranslations,
     appTitle: "అత్యవసర ప్రథమ చికిత్స",
     appSubtitle: "గ్రామీణ భారతదేశం కోసం ప్రాణరక్షక మార్గదర్శకత్వం",
     language: "భాష",
@@ -328,7 +371,30 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
     sepsis: "సెప్సిస్",
     call112Now: "ఇప్పుడే 112 కాల్ చేయండి",
     warningSigns: "హెచ్చరిక సంకేతాలు",
-    stepByStepActions: "దశల వారీ చర్యలు"
+    stepByStepActions: "దశల వారీ చర్యలు",
+    emergencyContacts: "అత్యవసర పరిచయాలు",
+    call112: "112 కాల్ చేయండి",
+    contacts: "పరిచయాలు",
+    
+    // Using existing translation keys
+    suddenCollapse: "అకస్మాత్తుగా కూలిపోవుట",
+    noPulseBreathing: "నాడిమిట్టు లేదా శ్వాస లేకపోవుట",
+    lossOfConsciousness: "స్పృహ కోల్పోవుట",
+    gaspingSeizureLike: "నీలిరంగు పెదాలు లేదా ముఖం",
+    noResponse: "స్పందనలేకపోవుట",
+    
+    callEmergency: "అత్యవసర కాల్",
+    dialImmediately: "వెంటనే 112 డయల్ చేయండి. లక్షణాలను నిర్ధారించడానికి వేచి ఉండకండి.",
+    dontWaitToConfirm: "చెప్పండి: \"సంభావ్య కార్డియాక్ అరెస్ట్, రోగి అపస్మారక స్థితిలో మరియు శ్వాసించడం లేదు.\"",
+    
+    startChestCompressions: "ఛాతీ కంప్రెషన్లు మొదలుపెట్టండి",
+    pushHardFast100120: "ఛాతీ మధ్యలో గట్టిగా మరియు వేగంగా నొక్కండి (నిమిషానికి 100-120 సార్లు).",
+    
+    useAEDIfAvailable: "AED అందుబాటులో ఉంటే ఉపయోగించండి",
+    followAEDPrompts: "AED ను ఆన్ చేసి వాయిస్ ప్రాంప్ట్లను అనుసరించండి. కంప్రెషన్లను కొనసాగించండి.",
+    
+    continueCPR: "కంప్రెషన్లను కొనసాగించండి",
+    dontStopCompressions: "సహాయం వచ్చే వరకు లేదా రోగి శ్వాస తీసుకోవడం మొదలుపెట్టే వరకు కంప్రెషన్లను ఆపకండి."
   };
   
   // Marathi
@@ -346,9 +412,8 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
     stepByStepActions: "पायरी-पायरीच्या कृती"
   };
   
-  // Spanish
+  // Spanish - Complete translations
   translations.es = {
-    ...englishTranslations,
     appTitle: "Primeros Auxilios de Emergencia",
     appSubtitle: "Guía que salva vidas para la India rural",
     language: "Idioma",
@@ -358,7 +423,30 @@ const createDefaultTranslations = (): Record<Language, Translations> => {
     sepsis: "Sepsis",
     call112Now: "LLAMAR AL 112 AHORA",
     warningSigns: "Señales de Advertencia",
-    stepByStepActions: "Acciones Paso a Paso"
+    stepByStepActions: "Acciones Paso a Paso",
+    emergencyContacts: "Contactos de Emergencia",
+    call112: "Llamar al 112",
+    contacts: "Contactos",
+    
+    // Using existing translation keys
+    suddenCollapse: "Colapso repentino",
+    noPulseBreathing: "Sin pulso o respiración",
+    lossOfConsciousness: "Pérdida de consciencia",
+    gaspingSeizureLike: "Labios o cara azules",
+    noResponse: "No responde",
+    
+    callEmergency: "Llamada de Emergencia",
+    dialImmediately: "Marque 112 inmediatamente. No espere a confirmar síntomas.",
+    dontWaitToConfirm: "Diga: \"Posible paro cardíaco, paciente inconsciente y sin respirar.\"",
+    
+    startChestCompressions: "Comenzar Compresiones Torácicas",
+    pushHardFast100120: "Presione fuerte y rápido en el centro del pecho (100-120 por minuto).",
+    
+    useAEDIfAvailable: "Use AED si está disponible",
+    followAEDPrompts: "Encienda el AED y siga las instrucciones de voz. Continúe las compresiones.",
+    
+    continueCPR: "Continuar Compresiones",
+    dontStopCompressions: "No detenga las compresiones hasta que llegue ayuda o el paciente comience a respirar."
   };
   
   // French
