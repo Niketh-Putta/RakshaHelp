@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
 
+// Import severe bleeding images
+import severeBleedingCall112Img from "@/assets/severe-bleeding-call-112.png";
+import severeBleedingApplyPressureImg from "@/assets/severe-bleeding-apply-pressure.png";
+import severeBleedingElevateLimbImg from "@/assets/severe-bleeding-elevate-limb.png";
+import severeBleedingDoNotRemoveClothImg from "@/assets/severe-bleeding-do-not-remove-cloth.png";
+import severeBleedingLayDownImg from "@/assets/severe-bleeding-lay-down.png";
+
 export default function SevereBleeding() {
   const { translations } = useLanguage();
 
@@ -21,8 +28,8 @@ export default function SevereBleeding() {
           </Button>
         </Link>
         <div className="flex items-center space-x-3">
-          <Droplets className="h-8 w-8 text-[hsl(var(--emergency-red))]" />
-          <h1 className="text-xl font-bold text-[hsl(var(--emergency-red))]" data-testid="text-page-title">
+          <Droplets className="h-8 w-8 text-[hsl(var(--emergency-blue))]" />
+          <h1 className="text-xl font-bold text-[hsl(var(--emergency-blue))]" data-testid="text-page-title">
             {translations.severeBleeding}
           </h1>
         </div>
@@ -30,33 +37,33 @@ export default function SevereBleeding() {
       </header>
 
       {/* Warning Signs */}
-      <Card className="mb-6 border-[hsl(var(--emergency-red))] border-2">
+      <Card className="mb-6 border-[hsl(var(--emergency-blue))] border-2">
         <CardContent className="p-4">
           <div className="flex items-center mb-3">
-            <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-red))] mr-2" />
-            <h2 className="text-lg font-bold text-[hsl(var(--emergency-red))]" data-testid="text-warning-signs-title">
+            <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-blue))] mr-2" />
+            <h2 className="text-lg font-bold text-[hsl(var(--emergency-blue))]" data-testid="text-warning-signs-title">
               {translations.warningSigns}
             </h2>
           </div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
-              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span className="text-[hsl(var(--emergency-blue))] mr-2">•</span>
               <span>{translations.bloodFlowingHeavily}</span>
             </li>
             <li className="flex items-start">
-              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span className="text-[hsl(var(--emergency-blue))] mr-2">•</span>
               <span>{translations.bloodSoakingThroughClothing}</span>
             </li>
             <li className="flex items-start">
-              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span className="text-[hsl(var(--emergency-blue))] mr-2">•</span>
               <span>{translations.spurtingBlood}</span>
             </li>
             <li className="flex items-start">
-              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span className="text-[hsl(var(--emergency-blue))] mr-2">•</span>
               <span>{translations.personBecomingPaleWeak}</span>
             </li>
             <li className="flex items-start">
-              <span className="text-[hsl(var(--emergency-red))] mr-2">•</span>
+              <span className="text-[hsl(var(--emergency-blue))] mr-2">•</span>
               <span>{translations.uncontrolledBleedingAfter10Min}</span>
             </li>
           </ul>
@@ -68,10 +75,10 @@ export default function SevereBleeding() {
         <h2 className="text-lg font-bold text-gray-800 px-2">{translations.stepByStepActions}</h2>
         
         {/* Step 1 */}
-        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-blue))]">
           <CardContent className="p-4">
             <div className="flex items-center mb-2">
-              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+              <div className="bg-[hsl(var(--emergency-blue))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 1
               </div>
               <h3 className="font-bold text-lg">{translations.callEmergency}</h3>
@@ -79,17 +86,22 @@ export default function SevereBleeding() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.dialImmediatelyIfSevereBleeding}
             </p>
-            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-              <p className="text-xs text-red-600">[Image: Person calling with visible bleeding victim]</p>
+            <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src={severeBleedingCall112Img} 
+                alt="Emergency services call 112 - India emergency response logo" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-blue-600">Call 112 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>
 
         {/* Step 2 */}
-        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-blue))]">
           <CardContent className="p-4">
             <div className="flex items-center mb-2">
-              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+              <div className="bg-[hsl(var(--emergency-blue))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 2
               </div>
               <h3 className="font-bold text-lg">{translations.applyFirmPressure}</h3>
@@ -97,17 +109,22 @@ export default function SevereBleeding() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.useCleanClothGauzeHand}
             </p>
-            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-              <p className="text-xs text-red-600">[Image: Hands pressing cloth firmly on arm wound]</p>
+            <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src={severeBleedingApplyPressureImg} 
+                alt="Hands applying direct pressure to bleeding wound on arm" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-blue-600">Apply firm direct pressure with clean cloth or hands</p>
             </div>
           </CardContent>
         </Card>
 
         {/* Step 3 */}
-        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-blue))]">
           <CardContent className="p-4">
             <div className="flex items-center mb-2">
-              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+              <div className="bg-[hsl(var(--emergency-blue))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
               <h3 className="font-bold text-lg">{translations.elevateLimbIfPossible}</h3>
@@ -115,17 +132,22 @@ export default function SevereBleeding() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.raiseBleedingArmLegAboveHeart}
             </p>
-            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-              <p className="text-xs text-red-600">[Image: Raised arm with cloth wrapped]</p>
+            <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src={severeBleedingElevateLimbImg} 
+                alt="Person with elevated injured arm wrapped in bandage" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-blue-600">Elevate the injured limb above heart level if possible</p>
             </div>
           </CardContent>
         </Card>
 
         {/* Step 4 */}
-        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-blue))]">
           <CardContent className="p-4">
             <div className="flex items-center mb-2">
-              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+              <div className="bg-[hsl(var(--emergency-blue))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 4
               </div>
               <h3 className="font-bold text-lg">{translations.doNotRemoveCloth}</h3>
@@ -133,26 +155,36 @@ export default function SevereBleeding() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.addMoreLayersDontRemoveOriginal}
             </p>
-            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-              <p className="text-xs text-red-600">[Image: Layered cloth bandage on wound]</p>
+            <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src={severeBleedingDoNotRemoveClothImg} 
+                alt="Layered bandages on wound showing proper technique" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-blue-600">Add more layers if blood soaks through, don't remove original cloth</p>
             </div>
           </CardContent>
         </Card>
 
         {/* Step 5 */}
-        <Card className="border-l-4 border-l-[hsl(var(--emergency-red))]">
+        <Card className="border-l-4 border-l-[hsl(var(--emergency-blue))]">
           <CardContent className="p-4">
             <div className="flex items-center mb-2">
-              <div className="bg-[hsl(var(--emergency-red))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+              <div className="bg-[hsl(var(--emergency-blue))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 5
               </div>
               <h3 className="font-bold text-lg">{translations.keepPersonCalmStill}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              {translations.layDownIfDizzyBlanketIfCold}
+              Lay them down if feeling dizzy or weak. Keep the injured limb elevated while lying down. Cover with blanket if pale or cold.
             </p>
-            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
-              <p className="text-xs text-red-600">[Image: Person lying down, covered, with helper]</p>
+            <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <img 
+                src={severeBleedingLayDownImg} 
+                alt="Person lying down with helper providing care and elevated injured limb" 
+                className="w-full h-40 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-blue-600">Lay person down with injured limb kept elevated above heart level</p>
             </div>
           </CardContent>
         </Card>
@@ -162,7 +194,7 @@ export default function SevereBleeding() {
       <div className="fixed bottom-4 left-4 right-4 max-w-md mx-auto">
         <Button
           onClick={handleCallEmergency}
-          className="w-full bg-[hsl(var(--emergency-red))] hover:bg-[hsl(var(--emergency-red-hover))] text-white py-6 text-lg font-bold rounded-2xl shadow-lg"
+          className="w-full bg-[hsl(var(--emergency-blue))] hover:bg-[hsl(var(--emergency-blue-hover))] text-white py-6 text-lg font-bold rounded-2xl shadow-lg"
           data-testid="button-emergency-call"
         >
           <Phone className="mr-2 h-6 w-6" />

@@ -212,7 +212,7 @@ const englishTranslations: Translations = {
   doNotRemoveCloth: "Do Not Remove Cloth",
   addMoreLayersDontRemoveOriginal: "If blood soaks through, add more layers, but don't remove the original cloth.",
   keepPersonCalmStill: "Keep Person Calm and Still",
-  layDownIfDizzyBlanketIfCold: "Lay them down if feeling dizzy or weak. Cover with a blanket if pale or cold.",
+  layDownIfDizzyBlanketIfCold: "Lay them down if feeling dizzy or weak. Keep the injured limb elevated while lying down. Cover with blanket if pale or cold.",
   saySevereBleeding: "Say: \"Uncontrolled bleeding — [body part], blood not stopping.\""
 };
 
@@ -320,7 +320,7 @@ const hindiTranslations: Translations = {
   doNotRemoveCloth: "कपड़ा न हटाएं",
   addMoreLayersDontRemoveOriginal: "यदि खून भीग जाए तो और परतें जोड़ें, लेकिन मूल कपड़ा न हटाएं।",
   keepPersonCalmStill: "व्यक्ति को शांत और स्थिर रखें",
-  layDownIfDizzyBlanketIfCold: "यदि चक्कर आ रहा या कमजोरी महसूस हो रहा है तो लिटाएं। पीला या ठंडा लगे तो कंबल ओढ़ाएं।",
+  layDownIfDizzyBlanketIfCold: "यदि चक्कर आ रहा या कमजोरी महसूस हो रहा है तो लिटाएं। घायल अंग को ऊंचा रखें। पीला या ठंडा लगे तो कंबल ओढ़ाएं।",
   saySevereBleeding: "कहें: \"बेकाबू खून बह रहा है — [शरीर का हिस्सा], खून नहीं रुक रहा।\""
 };
 
@@ -428,7 +428,7 @@ const teluguTranslations: Translations = {
   doNotRemoveCloth: "వస్త్రాన్ని తొలగించవద్దు",
   addMoreLayersDontRemoveOriginal: "రక్తం నానితే మరిన్ని పొరలు జోడించండి, కానీ అసలు వస్త్రాన్ని తొలగించవద్దు।",
   keepPersonCalmStill: "వ్యక్తిని ప్రశాంతంగా మరియు నిశ్చలంగా ఉంచండి",
-  layDownIfDizzyBlanketIfCold: "తలతిరుగుట లేదా బలహీనత అనిపిస్తే వారిని పడుకోబెట్టండి। లేతగా లేదా చల్లగా ఉంటే దుప్పటితో కప్పండి।",
+  layDownIfDizzyBlanketIfCold: "తలతిరుగుట లేదా బలహీనత అనిపిస్తే వారిని పడుకోబెట్టండి। గాయపడిన అవయవాన్ని ఎత్తుగా ఉంచండి। లేతగా లేదా చల్లగా ఉంటే దుప్పటితో కప్పండి।",
   saySevereBleeding: "చెప్పండి: \"అదుపు లేని రక్తస్రావం — [శరీర భాగం], రక్తం ఆగట్లేదు.\""
 };
 
