@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
 import call112Img from '/src/assets/call-112-emergency.png';
+import strokeFastTestImg from '/src/assets/stroke-fast-test.png';
 
 export default function Stroke() {
   const { translations } = useLanguage();
@@ -99,8 +100,13 @@ export default function Stroke() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.askPersonSmileArms}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Icons showing smile, raised arms, speech]</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <img 
+                src={strokeFastTestImg} 
+                alt="FAST stroke test - Face drooping, Arm weakness, Speech difficulties, Time to call" 
+                className="w-full h-48 object-contain rounded mb-2"
+              />
+              <p className="text-xs text-orange-600">FAST test: Face, Arms, Speech, Time - Remember, recognize and act fast</p>
             </div>
           </CardContent>
         </Card>
