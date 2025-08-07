@@ -125,8 +125,13 @@ export default function CardiacArrest() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.followAEDPrompts}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: AED being used on a person]</p>
+            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
+              <img 
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop&crop=center" 
+                alt="AED defibrillator device" 
+                className="w-full h-20 object-cover rounded mb-2"
+              />
+              <p className="text-xs text-red-600">Attach pads and follow device instructions</p>
             </div>
           </CardContent>
         </Card>
@@ -143,8 +148,13 @@ export default function CardiacArrest() {
             <p className="font-semibold text-gray-800 mb-2">
               {translations.dontStopCompressions}
             </p>
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <p className="text-xs text-gray-600">[Image: Continuous CPR, emergency lights in background]</p>
+            <div className="bg-red-50 p-3 rounded-lg border border-red-200">
+              <img 
+                src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=200&fit=crop&crop=center" 
+                alt="Emergency medical team arriving" 
+                className="w-full h-20 object-cover rounded mb-2"
+              />
+              <p className="text-xs text-red-600">Keep going until help arrives</p>
             </div>
           </CardContent>
         </Card>
