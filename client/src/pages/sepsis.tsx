@@ -23,7 +23,7 @@ export default function Sepsis() {
         <div className="flex items-center space-x-3">
           <Thermometer className="h-8 w-8 text-[hsl(var(--emergency-purple))]" />
           <h1 className="text-xl font-bold text-[hsl(var(--emergency-purple))]" data-testid="text-page-title">
-            Sepsis
+            {translations.sepsis}
           </h1>
         </div>
         <div className="w-10" />
@@ -35,29 +35,29 @@ export default function Sepsis() {
           <div className="flex items-center mb-3">
             <AlertTriangle className="h-6 w-6 text-[hsl(var(--emergency-purple))] mr-2" />
             <h2 className="text-lg font-bold text-[hsl(var(--emergency-purple))]" data-testid="text-warning-signs-title">
-              Warning Signs
+              {translations.warningSigns}
             </h2>
           </div>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
-              <span>Fever or very low body temperature</span>
+              <span>{translations.feverOrLowTemp}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
-              <span>Fast heart rate or breathing</span>
+              <span>{translations.fastHeartRateBreathing}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
-              <span>Confusion or drowsiness</span>
+              <span>{translations.confusionDrowsiness}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
-              <span>Pale or cold skin</span>
+              <span>{translations.paleColdSkin}</span>
             </li>
             <li className="flex items-start">
               <span className="text-[hsl(var(--emergency-purple))] mr-2">•</span>
-              <span>Infection symptoms (e.g., wound, UTI, pneumonia)</span>
+              <span>{translations.infectionSymptoms}</span>
             </li>
           </ul>
         </CardContent>
@@ -65,7 +65,7 @@ export default function Sepsis() {
 
       {/* Step-by-Step Instructions */}
       <div className="space-y-4 mb-6">
-        <h2 className="text-lg font-bold text-gray-800 px-2">Step-by-Step Actions</h2>
+        <h2 className="text-lg font-bold text-gray-800 px-2">{translations.stepByStepActions}</h2>
         
         {/* Step 1 */}
         <Card className="border-l-4 border-l-[hsl(var(--emergency-purple))]">
@@ -74,10 +74,10 @@ export default function Sepsis() {
               <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 1
               </div>
-              <h3 className="font-bold text-lg">Call Emergency</h3>
+              <h3 className="font-bold text-lg">{translations.callEmergency}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Dial 112. Mention symptoms and known infection.
+              {translations.mentionSymptomsInfection}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Phone + thermometer or infection symbol]</p>
@@ -92,10 +92,10 @@ export default function Sepsis() {
               <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 2
               </div>
-              <h3 className="font-bold text-lg">Lay Person Flat</h3>
+              <h3 className="font-bold text-lg">{translations.layPersonFlat}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Keep them lying down and warm.
+              {translations.keepLyingWarm}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Person lying under blanket]</p>
@@ -110,10 +110,10 @@ export default function Sepsis() {
               <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 3
               </div>
-              <h3 className="font-bold text-lg">Don't give food or meds</h3>
+              <h3 className="font-bold text-lg">{translations.dontGiveFoodMeds}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Avoid unless instructed by medical professionals.
+              {translations.avoidUnlessInstructed}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Crossed-out pill or food]</p>
@@ -128,10 +128,10 @@ export default function Sepsis() {
               <div className="bg-[hsl(var(--emergency-purple))] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
                 4
               </div>
-              <h3 className="font-bold text-lg">Monitor Vital Signs</h3>
+              <h3 className="font-bold text-lg">{translations.monitorVitalSigns}</h3>
             </div>
             <p className="font-semibold text-gray-800 mb-2">
-              Check breathing, skin color, and alertness.
+              {translations.checkBreathingSkinAlertness}
             </p>
             <div className="bg-gray-100 p-3 rounded-lg">
               <p className="text-xs text-gray-600">[Image: Face with pale skin, visible breath]</p>
@@ -148,10 +148,10 @@ export default function Sepsis() {
           data-testid="button-emergency-call"
         >
           <Phone className="mr-2 h-6 w-6" />
-          CALL 112 NOW
+          {translations.call112Now}
         </Button>
         <p className="text-center text-xs text-gray-600 mt-2">
-          Say: "Possible sepsis – infection with confusion and rapid breathing."
+          {translations.saySepsis}
         </p>
       </div>
 
