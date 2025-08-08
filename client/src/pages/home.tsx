@@ -134,7 +134,7 @@ export default function Home() {
       </Card>
 
       {/* Offline Status Indicator */}
-      <div className="text-center mb-8">
+      <div className="text-center">
         <div className="inline-flex items-center offline-ready text-white px-4 py-2 rounded-full text-sm">
           <Wifi className="mr-2 h-4 w-4" />
           <span data-testid="text-offline-status">
@@ -142,47 +142,6 @@ export default function Home() {
           </span>
         </div>
       </div>
-
-      {/* Our Goal Section */}
-      <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-100 rounded-2xl shadow-lg mb-6">
-        <CardContent className="p-6">
-          <h2 className="text-xl font-bold text-blue-900 mb-4 text-center border-b-2 border-blue-200 pb-2" data-testid="text-our-goal-title">
-            Our Goal
-          </h2>
-          
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p className="text-sm">
-              Every year, <strong className="text-red-600">millions of lives are lost in India</strong> due to sudden medical emergencies like cardiac arrest, heart attack, stroke, and severe bleeding.
-            </p>
-            
-            <p className="text-sm">
-              In many cases, death occurs before medical help arrives — not because the condition was untreatable, but because no one nearby knew what to do in those <strong className="text-orange-600">first critical minutes</strong>.
-            </p>
-            
-            <div className="bg-blue-100 p-4 rounded-xl border-l-4 border-blue-500">
-              <p className="text-sm font-medium text-blue-900 mb-2">Our mission is simple:</p>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span><strong>Empower every family</strong> to have at least one person who can give life-saving first aid.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Provide <strong className="text-green-600">clear, quick, and reliable guidance</strong> during emergencies.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Bridge the gap in healthcare access, especially in <strong>rural areas</strong> where hospitals and trained professionals are far away.</span>
-                </li>
-              </ul>
-            </div>
-            
-            <p className="text-sm text-center italic text-blue-800 bg-yellow-50 p-3 rounded-lg border border-yellow-200">
-              With the right knowledge at the right time, <strong className="text-blue-900">countless lives can be saved</strong>. This app is here to make that possible — <strong className="text-indigo-700">one person, one family, one village at a time</strong>.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* Contacts Modal */}
       <ContactsModal 
