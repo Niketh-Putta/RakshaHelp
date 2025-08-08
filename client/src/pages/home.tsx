@@ -149,9 +149,20 @@ export default function Home() {
           <h3 className="font-bold text-lg text-gray-800 mb-3" data-testid="text-our-goal-title">
             Our Goal:
           </h3>
-          <p className="text-sm text-gray-700 leading-relaxed" data-testid="text-our-goal-content">
-            Every year, millions of lives are lost in India due to sudden medical emergencies like cardiac arrest, stroke, heart attack, and severe bleeding. The tragic reality is that many of these deaths could be prevented if families knew what to do in the critical first few minutes before medical help arrives. Our mission is to empower every person and family with life-saving first aid knowledge, especially in rural areas where access to immediate medical care is limited. Together, we can save lives—one person, one family, one village at a time.
-          </p>
+          <div className="text-sm text-gray-700 leading-relaxed space-y-3" data-testid="text-our-goal-content">
+            <p>
+              Every year, <span className="font-bold text-gray-800">millions of lives are lost in India</span> due to sudden medical emergencies like <span className="font-semibold text-red-600">cardiac arrest</span>, <span className="font-semibold text-orange-600">stroke</span>, <span className="font-semibold text-yellow-600">heart attack</span>, and <span className="font-semibold text-blue-600">severe bleeding</span>.
+            </p>
+            <p>
+              The tragic reality is that <span className="font-bold text-gray-800">many of these deaths could be prevented</span> if families knew what to do in the <span className="font-bold text-red-700">critical first few minutes</span> before medical help arrives.
+            </p>
+            <p>
+              Our mission is to <span className="font-bold text-green-700">empower every person and family</span> with life-saving first aid knowledge, especially in <span className="font-semibold text-gray-800">rural areas</span> where access to immediate medical care is limited.
+            </p>
+            <p className="font-semibold text-gray-800 italic">
+              Together, we can save lives—<span className="font-bold">one person, one family, one village at a time.</span>
+            </p>
+          </div>
         </CardContent>
       </Card>
 
