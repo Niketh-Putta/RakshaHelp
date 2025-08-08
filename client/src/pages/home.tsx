@@ -144,8 +144,8 @@ export default function Home() {
       </div>
 
       {/* Our Goal Section */}
-      <Card className="bg-white rounded-2xl shadow-md mb-6">
-        <CardContent className="p-5">
+      <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-lg mb-6 mx-2">
+        <CardContent className="p-6">
           <h3 className="font-bold text-lg text-gray-800 mb-3" data-testid="text-our-goal-title">
             Our Goal:
           </h3>
