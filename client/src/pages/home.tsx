@@ -134,7 +134,7 @@ export default function Home() {
       </Card>
 
       {/* Offline Status Indicator */}
-      <div className="text-center">
+      <div className="text-center mb-6">
         <div className="inline-flex items-center offline-ready text-white px-4 py-2 rounded-full text-sm">
           <Wifi className="mr-2 h-4 w-4" />
           <span data-testid="text-offline-status">
@@ -142,6 +142,18 @@ export default function Home() {
           </span>
         </div>
       </div>
+
+      {/* Our Goal Section */}
+      <Card className="bg-white rounded-2xl shadow-md mb-6">
+        <CardContent className="p-5">
+          <h3 className="font-bold text-lg text-gray-800 mb-3" data-testid="text-our-goal-title">
+            Our Goal:
+          </h3>
+          <p className="text-sm text-gray-700 leading-relaxed" data-testid="text-our-goal-content">
+            Every year, millions of lives are lost in India due to sudden medical emergencies like cardiac arrest, stroke, heart attack, and severe bleeding. The tragic reality is that many of these deaths could be prevented if families knew what to do in the critical first few minutes before medical help arrives. Our mission is to empower every person and family with life-saving first aid knowledge, especially in rural areas where access to immediate medical care is limited. Together, we can save lives—one person, one family, one village at a time.
+          </p>
+        </CardContent>
+      </Card>
 
       {/* Contacts Modal */}
       <ContactsModal 
