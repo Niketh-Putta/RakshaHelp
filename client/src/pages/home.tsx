@@ -1,4 +1,4 @@
-import { Heart, Brain, Activity, Droplets, Phone, Users, Wifi } from "lucide-react";
+import { Heart, Brain, Activity, Droplets, Phone, Users, Wifi, Target, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSelector } from "@/components/language-selector";
@@ -11,6 +11,7 @@ import { useState } from "react";
 export default function Home() {
   const { translations } = useLanguage();
   const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
+  const [isOurGoalModalOpen, setIsOurGoalModalOpen] = useState(false);
 
   const handleEmergencyClick = (type: string) => {
     logEmergencyAccess(type, translations.language || 'en');
@@ -22,6 +23,10 @@ export default function Home() {
 
   const handleShowContacts = () => {
     setIsContactsModalOpen(true);
+  };
+
+  const handleShowOurGoal = () => {
+    setIsOurGoalModalOpen(true);
   };
 
   return (
@@ -134,7 +139,7 @@ export default function Home() {
       </Card>
 
       {/* Offline Status Indicator */}
-      <div className="text-center">
+      <div className="text-center mb-6">
         <div className="inline-flex items-center offline-ready text-white px-4 py-2 rounded-full text-sm">
           <Wifi className="mr-2 h-4 w-4" />
           <span data-testid="text-offline-status">
@@ -143,11 +148,83 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Our Goal Button */}
+      <div className="text-center mb-6">
+        <Button
+          onClick={handleShowOurGoal}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
+          data-testid="button-our-goal"
+        >
+          <Target className="mr-2 h-4 w-4" />
+          Our Goal
+        </Button>
+      </div>
+
       {/* Contacts Modal */}
       <ContactsModal 
         isOpen={isContactsModalOpen} 
         onClose={() => setIsContactsModalOpen(false)} 
       />
+
+      {/* Our Goal Modal */}
+      {isOurGoalModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4" data-testid="modal-our-goal">
+          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="sticky top-0 bg-white rounded-t-2xl border-b px-6 py-4 flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-indigo-600 flex items-center">
+                <Target className="mr-3 h-6 w-6" />
+                Our Goal
+              </h2>
+              <Button
+                onClick={() => setIsOurGoalModalOpen(false)}
+                className="text-gray-500 hover:text-gray-700 p-1"
+                data-testid="button-close-our-goal"
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
+            
+            <div className="p-6 text-gray-800 leading-relaxed">
+              <div className="space-y-6">
+                <p className="text-lg">
+                  Every year, <strong>millions of lives are lost in India</strong> due to sudden medical emergencies like cardiac arrest, heart attack, stroke, and severe bleeding.
+                </p>
+                
+                <p className="text-lg">
+                  In many cases, death occurs before medical help arrives — not because the condition was untreatable, but because <strong>no one nearby knew what to do in those first critical minutes</strong>.
+                </p>
+                
+                <div className="bg-indigo-50 p-4 rounded-xl border-l-4 border-indigo-500">
+                  <h3 className="text-xl font-bold text-indigo-700 mb-3">Our mission is simple:</h3>
+                  <ul className="space-y-3 text-lg">
+                    <li className="flex items-start">
+                      <span className="text-indigo-600 mr-3 text-xl">•</span>
+                      <span><strong>Empower every family</strong> to have at least one person who can give life-saving first aid.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-indigo-600 mr-3 text-xl">•</span>
+                      <span>Provide <strong>clear, quick, and reliable guidance</strong> during emergencies.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-indigo-600 mr-3 text-xl">•</span>
+                      <span><strong>Bridge the gap in healthcare access</strong>, especially in rural areas where hospitals and trained professionals are far away.</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-green-50 p-4 rounded-xl border-l-4 border-green-500">
+                  <p className="text-lg font-semibold text-green-800">
+                    With the right knowledge at the right time, <strong>countless lives can be saved</strong>.
+                  </p>
+                  <p className="text-lg text-green-700 mt-2">
+                    This app is here to make that possible — <strong>one person, one family, one village at a time</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
