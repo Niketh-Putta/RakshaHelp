@@ -11,8 +11,12 @@ export const registerServiceWorker = async () => {
 };
 
 export const callEmergency = (number: string) => {
-  if (confirm(`Call emergency number ${number}?`)) {
+  try {
     window.location.href = `tel:${number}`;
+  } catch (error) {
+    console.error('Failed to initiate phone call:', error);
+    // Fallback - try with different approach
+    window.open(`tel:${number}`);
   }
 };
 

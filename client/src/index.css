@@ -117,5 +117,50 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    /* Ensure full height on mobile */
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  /* Fix mobile viewport issues */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      min-height: -webkit-fill-available;
+    }
+  }
+
+  /* Custom mobile-first emergency styles */
+  .emergency-page-container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .emergency-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Touch targets for mobile emergency scenarios */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Emergency button styling */
+  .emergency-button {
+    transform: scale(1);
+    transition: all 0.2s ease;
+  }
+
+  .emergency-button:active {
+    transform: scale(0.95);
   }
 }

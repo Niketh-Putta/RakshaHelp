@@ -12,11 +12,18 @@ export default function CardiacArrest() {
   const { translations } = useLanguage();
 
   const handleCallEmergency = () => {
-    window.location.href = "tel:112";
+    try {
+      window.location.href = "tel:112";
+    } catch (error) {
+      console.error('Failed to initiate phone call:', error);
+      // Fallback
+      window.open("tel:112");
+    }
   };
 
   return (
-    <div className="container mx-auto px-4 py-6 max-w-md min-h-screen bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="container mx-auto px-4 py-6 max-w-md flex-1 flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between mb-6 bg-white rounded-2xl p-4 shadow-sm">
         <Link href="/">
@@ -179,8 +186,9 @@ export default function CardiacArrest() {
         </p>
       </div>
 
-      {/* Bottom padding for sticky button */}
-      <div className="h-24"></div>
+        {/* Bottom padding for sticky button */}
+        <div className="h-24"></div>
+      </div>
     </div>
   );
 }

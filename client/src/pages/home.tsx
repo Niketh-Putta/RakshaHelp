@@ -25,7 +25,8 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6 max-w-md">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="container mx-auto px-4 py-6 max-w-md flex-1 flex flex-col justify-center">
       {/* Header with Language Selector */}
       <header className="text-center mb-8">
         <h1 className="text-2xl font-bold text-gray-800 mb-4" data-testid="text-app-title">
@@ -143,11 +144,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Contacts Modal */}
-      <ContactsModal 
-        isOpen={isContactsModalOpen} 
-        onClose={() => setIsContactsModalOpen(false)} 
-      />
+        {/* Contacts Modal */}
+        <ContactsModal 
+          isOpen={isContactsModalOpen} 
+          onClose={() => setIsContactsModalOpen(false)} 
+        />
+      </div>
     </div>
   );
 }
