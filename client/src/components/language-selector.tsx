@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Globe, Check } from "lucide-react";
-import { useLanguage } from "@/hooks/use-language";
+import { useLanguage } from "@/hooks";
 import { Language } from "@/lib/translations-clean";
 
 export function LanguageSelector() {

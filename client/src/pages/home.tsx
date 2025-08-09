@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSelector } from "@/components/language-selector";
 import { ContactsModal } from "@/components/contacts-modal";
-import { useLanguage } from "@/hooks/use-language";
+import { useLanguage } from "@/hooks";
 import { callEmergency, logEmergencyAccess } from "@/lib/pwa";
 import { Link } from "wouter";
 import { useState } from "react";

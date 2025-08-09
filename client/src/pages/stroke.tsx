@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Phone, Brain, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useLanguage } from "@/hooks/use-language";
+import { useLanguage } from "@/hooks";
 import emergencyCall112Img from '/src/assets/emergency-call-112-standard.png';
 import strokeFastTestImg from '/src/assets/stroke-fast-test.png';
 import strokeRecoveryPositionImg from '/src/assets/stroke-recovery-position.png';
