@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Phone, Droplets, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useLanguage } from "@/hooks/use-language.tsx";
+import { useLanguage } from "@/hooks/use-language";
 
 // Import severe bleeding images
 import severeBleedingCall112Img from "@/assets/severe-bleeding-call-112.png";
