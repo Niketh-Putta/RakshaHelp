@@ -1,13 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>RakshaHelp – Emergency First Aid Guides</title>
+  <meta name="description" content="Clear, offline-friendly first-aid guides for cardiac arrest, stroke, heart attack, and sepsis." />
+
+  <!-- PWA basics -->
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- App icons (adjust paths/sizes to match your /public assets) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/manifest-icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Helpful but optional perf hints -->
+  <link rel="preconnect" href="https://rakshahelp.com" crossorigin />
+  <link rel="dns-prefetch" href="https://rakshahelp.com" />
+
+  <!-- Basic styles (replace with your own bundle if you have one) -->
+  <link rel="stylesheet" href="/index-55bsAl9U.css" />
+</head>
+<body>
+  <noscript>
+    This app works best with JavaScript enabled.
+  </noscript>
+
+  <!-- Your app’s root (if you use a framework) or regular HTML content -->
+  <div id="app">
+    <!-- If you’re serving static pages, put your HTML here.
+         If you’re using a JS bundle, it will hydrate/replace this. -->
+  </div>
+
+  <!-- Your main script bundle (replace with your file) -->
+  <script type="module" src="/index-ABKiIWDE.js"></script>
+
+  <!-- Service worker registration with auto-update + instant activation -->
+  <script>
+    (function () {
+      if (!('serviceWorker' in navigator)) return;
+
+      // Register on page load
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(reg => {
+          // Always check if a new SW is available
+          reg.update().catch(() => {});
+
+          // If there’s an updated worker waiting, tell it to take over now
+          if (reg.waiting) {
+            reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+          }
+
+          // If a new worker is installed and waiting, also trigger it
+          reg.addEventListener('updatefound', () => {
+            const newSW = reg.installing;
+            if (!newSW) return;
+            newSW.addEventListener('statechange', () => {
+              if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                newSW.postMessage({ type: 'SKIP_WAITING' });
+              }
+            });
+          });
+
+          // When the new SW takes control, reload so users see the latest
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            // Avoid infinite loops
+            if (!window.__reloadedBySW) {
+              window.__reloadedBySW = true;
+              window.location.reload();
+            }
+          });
+        }).catch(() => {
+          // Registration failed – ignore silently or log if you want
+        });
+      });
+
+      // Allow the page to ask the SW to skip waiting
+      navigator.serviceWorker?.addEventListener?.('message', (event) => {
+        if (event.data?.type === 'SKIP_WAITING' && 'skipWaiting' in self) {
+          // This branch is mostly for SW context; kept for completeness
+          self.skipWaiting?.();
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
