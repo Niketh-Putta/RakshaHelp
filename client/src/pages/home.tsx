@@ -1,8 +1,9 @@
-import { Heart, Brain, Activity, Droplets, Phone, Users, Wifi } from "lucide-react";
+import { Heart, Brain, Activity, Droplets, Phone, Users, Wifi, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LanguageSelector } from "@/components/language-selector";
 import { ContactsModal } from "@/components/contacts-modal";
+import { OurGoalModal } from "@/components/our-goal-modal";
 import { useLanguage } from "@/hooks";
 import { callEmergency, logEmergencyAccess } from "@/lib/pwa";
 import { Link } from "wouter";
@@ -11,6 +12,7 @@ import { useState } from "react";
 export default function Home() {
   const { translations } = useLanguage();
   const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
+  const [isOurGoalModalOpen, setIsOurGoalModalOpen] = useState(false);
 
   const handleEmergencyClick = (type: string) => {
     logEmergencyAccess(type, translations.language || 'en');
@@ -22,6 +24,10 @@ export default function Home() {
 
   const handleShowContacts = () => {
     setIsContactsModalOpen(true);
+  };
+
+  const handleShowOurGoal = () => {
+    setIsOurGoalModalOpen(true);
   };
 
   return (
@@ -135,7 +141,7 @@ export default function Home() {
       </Card>
 
       {/* Offline Status Indicator */}
-      <div className="text-center">
+      <div className="text-center mb-6">
         <div className="inline-flex items-center offline-ready text-white px-4 py-2 rounded-full text-sm">
           <Wifi className="mr-2 h-4 w-4" />
           <span data-testid="text-offline-status">
@@ -144,10 +150,28 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Our Goal Button */}
+      <div className="text-center mb-6">
+        <Button
+          onClick={handleShowOurGoal}
+          className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
+          data-testid="button-our-goal"
+        >
+          <Target className="mr-2 h-4 w-4" />
+          Our Goal
+        </Button>
+      </div>
+
         {/* Contacts Modal */}
         <ContactsModal 
           isOpen={isContactsModalOpen} 
           onClose={() => setIsContactsModalOpen(false)} 
+        />
+
+        {/* Our Goal Modal */}
+        <OurGoalModal 
+          isOpen={isOurGoalModalOpen} 
+          onClose={() => setIsOurGoalModalOpen(false)} 
         />
       </div>
     </div>

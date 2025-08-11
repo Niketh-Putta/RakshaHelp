@@ -50,3 +50,30 @@ export const logEmergencyAccess = (emergencyType: string, language: string) => {
 
   console.log("Emergency access logged:", logData);
 };
+
+// --- add this to client/src/lib/pwa.ts ---
+export async function initPWA() {
+  try {
+    // if you already have registerServiceWorker in this file, reuse it:
+    if (typeof registerServiceWorker === "function") {
+      await registerServiceWorker();
+      return;
+    }
+
+    // fallback: register directly
+    if ("serviceWorker" in navigator) {
+      const reg = await navigator.serviceWorker.register("/sw.js");
+      reg.update().catch(() => {});
+      if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
+
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!(window as any).__reloadedBySW) {
+          (window as any).__reloadedBySW = true;
+          location.reload();
+        }
+      });
+    }
+  } catch (e) {
+    console.error("initPWA failed:", e);
+  }
+}
