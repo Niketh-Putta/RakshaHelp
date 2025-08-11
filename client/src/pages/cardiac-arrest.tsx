@@ -3,12 +3,11 @@ import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
-// Using public path reference for build compatibility
+// Using public path reference for build compatibility - only emergency call changed from 112 to 108
 const emergencyCall108Img = '/images/emergency-call-108.png';
-// Using public path references for build compatibility  
-const chestCompressionImg = '/images/chest-compression-technique.png';
-const aedPlacementImg = '/images/aed-placement.png';
-const cprContinuousImg = '/images/cpr-continuous.png';
+import chestCompressionImg from '@/assets/chest-compression-technique.png';
+import aedPlacementImg from '@/assets/aed-placement.png';
+import cprContinuousImg from '@/assets/cpr-continuous.png';
 
 export default function CardiacArrest() {
   const { translations } = useLanguage();
