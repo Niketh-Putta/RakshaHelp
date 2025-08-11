@@ -14,23 +14,32 @@ export const registerServiceWorker = async () => {
 
 export const callEmergency = (number: string) => {
   try {
-    // Use a more robust approach for phone calls on mobile
-    if (navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i)) {
-      // Mobile device - create a link element and click it
-      const link = document.createElement('a');
-      link.href = `tel:${number}`;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      // Desktop or fallback
-      window.location.href = `tel:${number}`;
+    // Multiple approaches for maximum mobile compatibility
+    const phoneUrl = `tel:${number}`;
+    
+    // Method 1: Direct window.location redirect (most reliable)
+    if (window.location) {
+      window.location.href = phoneUrl;
+      return;
     }
+    
+    // Method 2: Create and click a hidden link (fallback)
+    const link = document.createElement('a');
+    link.href = phoneUrl;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
   } catch (error) {
     console.error("Failed to initiate phone call:", error);
-    // Fallback - show phone number to user
-    alert(`Emergency Number: ${number}\nPlease dial this number manually.`);
+    try {
+      // Method 3: window.open fallback
+      window.open(phoneUrl, '_self');
+    } catch (fallbackError) {
+      // Method 4: Show alert as last resort
+      alert(`Please call emergency services: ${number}`);
+    }
   }
 };
 

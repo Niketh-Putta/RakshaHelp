@@ -3,6 +3,7 @@ import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
+import { callEmergency } from "@/lib/pwa";
 // Using public path reference for build compatibility - only emergency call changed from 112 to 108
 const emergencyCall108Img = '/images/emergency-call-108.png';
 import chestCompressionImg from '@/assets/chest-compression-technique.png';
@@ -13,13 +14,7 @@ export default function CardiacArrest() {
   const { translations } = useLanguage();
 
   const handleCallEmergency = () => {
-    try {
-      window.location.href = "tel:108";
-    } catch (error) {
-      console.error('Failed to initiate phone call:', error);
-      // Fallback
-      window.open("tel:108");
-    }
+    callEmergency('108');
   };
 
   return (

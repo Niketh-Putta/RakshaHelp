@@ -57,9 +57,37 @@ export function ContactsModal({ isOpen, onClose }: ContactsModalProps) {
     setContacts(contacts.filter(contact => contact.id !== id));
   };
 
-  const handleCallContact = (phone: string) => {
-    if (confirm(`Call ${phone}?`)) {
-      window.location.href = `tel:${phone}`;
+  const handleCallContact = (phone: string, name?: string) => {
+    const confirmMessage = name ? `Call ${name} at ${phone}?` : `Call ${phone}?`;
+    if (confirm(confirmMessage)) {
+      try {
+        // Use same robust calling method as emergency calls
+        const phoneUrl = `tel:${phone}`;
+        
+        // Method 1: Direct window.location redirect (most reliable)
+        if (window.location) {
+          window.location.href = phoneUrl;
+          return;
+        }
+        
+        // Method 2: Create and click a hidden link (fallback)
+        const link = document.createElement('a');
+        link.href = phoneUrl;
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+      } catch (error) {
+        console.error("Failed to initiate contact call:", error);
+        try {
+          // Method 3: window.open fallback
+          window.open(`tel:${phone}`, '_self');
+        } catch (fallbackError) {
+          // Method 4: Show alert as last resort
+          alert(`Please dial: ${phone}`);
+        }
+      }
     }
   };
 
@@ -195,7 +223,7 @@ export function ContactsModal({ isOpen, onClose }: ContactsModalProps) {
                       </div>
                       <div className="flex space-x-2">
                         <Button
-                          onClick={() => handleCallContact(contact.phone)}
+                          onClick={() => handleCallContact(contact.phone, contact.name)}
                           size="sm"
                           className="bg-green-600 hover:bg-green-700 text-white"
                           data-testid={`button-call-${contact.id}`}
