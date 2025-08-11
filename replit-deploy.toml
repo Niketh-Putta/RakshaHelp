@@ -1,0 +1,19 @@
+# Replit Deployment Configuration for Emergency First Aid App
+
+[build]
+# Custom build command that creates the production bundle
+run = "./deploy.sh"
+
+[start]
+# Production server startup command
+run = "NODE_ENV=production node dist/index.js"
+
+[env]
+# Environment variables for production
+NODE_ENV = "production"
+PORT = "5000"
+
+[deployment]
+# Deployment-specific settings
+build = true
+deploymentTarget = "gce"
