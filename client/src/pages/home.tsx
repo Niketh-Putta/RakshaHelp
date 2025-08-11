@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   const handleCallEmergency = () => {
-    callEmergency('112');
+    callEmergency('108');
   };
 
   const handleShowContacts = () => {

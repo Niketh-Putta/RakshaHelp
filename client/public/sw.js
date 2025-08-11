@@ -129,6 +129,6 @@ self.addEventListener("push", (event) => {
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  const url = event.action === "call" ? "tel:112" : "/";
+  const url = event.action === "call" ? "tel:108" : "/";
   event.waitUntil(clients.openWindow(url));
 });
