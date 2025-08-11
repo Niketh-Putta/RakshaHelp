@@ -106,6 +106,18 @@ export interface Translations {
   sayStroke: string;
   sayHeartAttack: string;
   saySevereBleeding: string;
+  // Our Goal modal translations
+  ourGoal: string;
+  ourGoalTitle: string;
+  ourGoalProblem1: string;
+  ourGoalProblem2: string;
+  ourGoalMissionTitle: string;
+  ourGoalMission1: string;
+  ourGoalMission2: string;
+  ourGoalMission3: string;
+  ourGoalVision: string;
+  ourGoalCallToAction: string;
+  close: string;
 }
 
 // English translations (Base)
@@ -213,7 +225,19 @@ const englishTranslations: Translations = {
   addMoreLayersDontRemoveOriginal: "If blood soaks through, add more layers, but don't remove the original cloth.",
   keepPersonCalmStill: "Keep Person Calm and Still",
   layDownIfDizzyBlanketIfCold: "Lay them down if feeling dizzy or weak. Keep the injured limb elevated while lying down. Cover with blanket if pale or cold.",
-  saySevereBleeding: "Say: \"Uncontrolled bleeding — [body part], blood not stopping.\""
+  saySevereBleeding: "Say: \"Uncontrolled bleeding — [body part], blood not stopping.\"",
+  // Our Goal modal translations
+  ourGoal: "Our Goal",
+  ourGoalTitle: "Our Goal",
+  ourGoalProblem1: "Every year, millions of lives are lost in India due to sudden medical emergencies like cardiac arrest, heart attack, stroke, and severe bleeding.",
+  ourGoalProblem2: "In many cases, death occurs before medical help arrives — not because the condition was untreatable, but because no one nearby knew what to do in those first critical minutes.",
+  ourGoalMissionTitle: "Our mission is simple:",
+  ourGoalMission1: "Empower every family to have at least one person who can give life-saving first aid.",
+  ourGoalMission2: "Provide clear, quick, and reliable guidance during emergencies.",
+  ourGoalMission3: "Bridge the gap in healthcare access, especially in rural areas where hospitals and trained professionals are far away.",
+  ourGoalVision: "With the right knowledge at the right time, countless lives can be saved. This app is here to make that possible — one person, one family, one village at a time.",
+  ourGoalCallToAction: "Together, we can turn ordinary people into life-savers.",
+  close: "Close"
 };
 
 // Hindi translations (Complete and tested)
@@ -321,7 +345,19 @@ const hindiTranslations: Translations = {
   addMoreLayersDontRemoveOriginal: "यदि खून भीग जाए तो और परतें जोड़ें, लेकिन मूल कपड़ा न हटाएं।",
   keepPersonCalmStill: "व्यक्ति को शांत और स्थिर रखें",
   layDownIfDizzyBlanketIfCold: "यदि चक्कर आ रहा या कमजोरी महसूस हो रहा है तो लिटाएं। घायल अंग को ऊंचा रखें। पीला या ठंडा लगे तो कंबल ओढ़ाएं।",
-  saySevereBleeding: "कहें: \"बेकाबू खून बह रहा है — [शरीर का हिस्सा], खून नहीं रुक रहा।\""
+  saySevereBleeding: "कहें: \"बेकाबू खून बह रहा है — [शरीर का हिस्सा], खून नहीं रुक रहा।\"",
+  // Our Goal modal translations
+  ourGoal: "हमारा लक्ष्य",
+  ourGoalTitle: "हमारा लक्ष्य",
+  ourGoalProblem1: "हर साल, भारत में हृदयाघात, हार्ट अटैक, स्ट्रोक और गंभीर रक्तस्राव जैसी अचानक आने वाली चिकित्सा आपातकालीन स्थितियों के कारण लाखों लोगों की जान चली जाती है।",
+  ourGoalProblem2: "कई मामलों में, चिकित्सा सहायता पहुंचने से पहले ही मृत्यु हो जाती है — इसलिए नहीं कि स्थिति का इलाज संभव नहीं था, बल्कि इसलिए कि आसपास किसी को नहीं पता था कि उन पहले महत्वपूर्ण मिनटों में क्या करना है।",
+  ourGoalMissionTitle: "हमारा मिशन सरल है:",
+  ourGoalMission1: "हर परिवार को सशक्त बनाना ताकि कम से कम एक व्यक्ति जीवनरक्षक प्राथमिक चिकित्सा दे सके।",
+  ourGoalMission2: "आपातकाल के दौरान स्पष्ट, त्वरित और विश्वसनीय मार्गदर्शन प्रदान करना।",
+  ourGoalMission3: "स्वास्थ्य सेवा पहुंच में अंतर को पाटना, विशेष रूप से ग्रामीण क्षेत्रों में जहां अस्पताल और प्रशिक्षित पेशेवर दूर हैं।",
+  ourGoalVision: "सही समय पर सही ज्ञान के साथ, अनगिनत जीवन बचाए जा सकते हैं। यह ऐप इसे संभव बनाने के लिए यहां है — एक व्यक्ति, एक परिवार, एक गांव के रूप में।",
+  ourGoalCallToAction: "मिलकर, हम आम लोगों को जीवन बचाने वाला बना सकते हैं।",
+  close: "बंद करें"
 };
 
 // Telugu translations (Complete and tested)
@@ -429,7 +465,19 @@ const teluguTranslations: Translations = {
   addMoreLayersDontRemoveOriginal: "రక్తం నానితే మరిన్ని పొరలు జోడించండి, కానీ అసలు వస్త్రాన్ని తొలగించవద్దు।",
   keepPersonCalmStill: "వ్యక్తిని ప్రశాంతంగా మరియు నిశ్చలంగా ఉంచండి",
   layDownIfDizzyBlanketIfCold: "తలతిరుగుట లేదా బలహీనత అనిపిస్తే వారిని పడుకోబెట్టండి। గాయపడిన అవయవాన్ని ఎత్తుగా ఉంచండి। లేతగా లేదా చల్లగా ఉంటే దుప్పటితో కప్పండి।",
-  saySevereBleeding: "చెప్పండి: \"అదుపు లేని రక్తస్రావం — [శరీర భాగం], రక్తం ఆగట్లేదు.\""
+  saySevereBleeding: "చెప్పండి: \"అదుపు లేని రక్తస్రావం — [శరీర భాగం], రక్తం ఆగట్లేదు.\"",
+  // Our Goal modal translations
+  ourGoal: "మా లక్ష్యం",
+  ourGoalTitle: "మా లక్ష్యం",
+  ourGoalProblem1: "ప్రతి సంవత్సరం, కార్డియాక్ అరెస్ట్, హార్ట్ అటాక్, స్ట్రోక్ మరియు తీవ్రమైన రక్తస్రావం వంటి అకస్మాత్ వైద్య అత్యవసర పరిస్థితుల వలన భారతదేశంలో లక్షలాది మంది ప్రాణాలు కోల్పోతున్నారు।",
+  ourGoalProblem2: "అనేక సందర్భాలలో, వైద్య సహాయం రాకముందే మృత్యువు సంభవిస్తుంది — పరిస్థితికి చికిత్స అందుబాటులో లేకపోవడం వల్ల కాదు, ఆ మొదటి కీలకమైన నిమిషాలలో ఏమి చేయాలో దగ్గరలో ఎవరికీ తెలియకపోవడం వల్ల।",
+  ourGoalMissionTitle: "మా మిషన్ సరళమైనది:",
+  ourGoalMission1: "ప్రతి కుటుంబంలో కనీసం ఒక వ్యక్తి ప్రాణరక్షణ ప్రథమ చికిత్స అందించగలిగేలా శక్తివంతం చేయడం।",
+  ourGoalMission2: "అత్యవసర పరిస్థితుల్లో స్పష్టమైన, వేగవంతమైన మరియు నమ్మకమైన మార్గదర్శకత్వం అందించడం।",
+  ourGoalMission3: "ఆరోగ్య సేవల అందుబాటులో ఉన్న అంతరాన్ని తగ్గించడం, ముఖ్యంగా ఆసుపత్రులు మరియు శిక్షణ పొందిన నిపుణులు దూరంగా ఉన్న గ్రామీణ ప్రాంతాలలో।",
+  ourGoalVision: "సరైన సమయంలో సరైన జ్ఞానంతో, లెక్కలేని ప్రాణాలను రక్షించవచ్చు. ఈ యాప్ దానిని సాధ్యం చేయడానికి ఇక్కడ ఉంది — ఒక వ్యక్తి, ఒక కుటుంబం, ఒక గ్రామం చొప్పున।",
+  ourGoalCallToAction: "కలిసి, మనం సాధారణ వ్యక్తులను ప్రాణ రక్షకులుగా మార్చగలం।",
+  close: "మూసివేయండి"
 };
 
 // Translation mapping with fallback

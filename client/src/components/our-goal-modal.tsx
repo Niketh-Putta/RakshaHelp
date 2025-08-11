@@ -1,6 +1,7 @@
 import { X, Target, Heart, Users, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/hooks';
 
 interface OurGoalModalProps {
   isOpen: boolean;
@@ -8,6 +9,8 @@ interface OurGoalModalProps {
 }
 
 export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
+  const { translations } = useLanguage();
+  
   if (!isOpen) return null;
 
   return (
@@ -19,7 +22,7 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
             <div className="flex items-center space-x-3">
               <Target className="h-8 w-8 text-blue-600" />
               <h2 className="text-2xl font-bold text-gray-800" data-testid="text-our-goal-title">
-                Our Goal
+                {translations.ourGoalTitle}
               </h2>
             </div>
             <Button
@@ -36,11 +39,11 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
             {/* Problem Statement */}
             <div className="space-y-3">
               <p className="text-base">
-                Every year, <strong className="text-red-600">millions of lives are lost in India</strong> due to sudden medical emergencies like cardiac arrest, heart attack, stroke, and severe bleeding.
+                {translations.ourGoalProblem1}
               </p>
               
               <p className="text-base">
-                In many cases, death occurs before medical help arrives — not because the condition was untreatable, but because <strong className="text-orange-600">no one nearby knew what to do in those first critical minutes.</strong>
+                {translations.ourGoalProblem2}
               </p>
             </div>
 
@@ -48,23 +51,23 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
             <div className="bg-blue-50 p-4 rounded-xl">
               <h3 className="text-lg font-bold text-blue-800 mb-3 flex items-center">
                 <Heart className="h-5 w-5 mr-2" />
-                Our mission is simple:
+                {translations.ourGoalMissionTitle}
               </h3>
               
               <ul className="space-y-3 text-blue-900">
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>Empower every family</strong> to have at least one person who can give life-saving first aid.</span>
+                  <span>{translations.ourGoalMission1}</span>
                 </li>
                 
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>Provide clear, quick, and reliable guidance</strong> during emergencies.</span>
+                  <span>{translations.ourGoalMission2}</span>
                 </li>
                 
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span><strong>Bridge the gap in healthcare access,</strong> especially in rural areas where hospitals and trained professionals are far away.</span>
+                  <span>{translations.ourGoalMission3}</span>
                 </li>
               </ul>
             </div>
@@ -76,14 +79,14 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
                 <MapPin className="h-5 w-5 text-green-600" />
               </div>
               <p className="text-green-900 font-medium">
-                With the right knowledge at the right time, <strong className="text-green-700">countless lives can be saved.</strong> This app is here to make that possible — <em>one person, one family, one village at a time.</em>
+                {translations.ourGoalVision}
               </p>
             </div>
 
             {/* Call to Action */}
             <div className="text-center pt-4">
               <p className="text-sm text-gray-600 italic">
-                Together, we can turn ordinary people into life-savers.
+                {translations.ourGoalCallToAction}
               </p>
             </div>
           </div>
@@ -95,7 +98,7 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold"
               data-testid="button-close-our-goal-bottom"
             >
-              Close
+              {translations.close}
             </Button>
           </div>
         </CardContent>
