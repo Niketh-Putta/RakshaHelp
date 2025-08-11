@@ -10,6 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### August 11, 2025 - Fixed App Startup and Workflow Configuration
+- Resolved critical startup issue where workflow was trying to run non-existent `npm run dev` script
+- Confirmed Emergency First Aid PWA runs correctly using `tsx server/index.ts` command
+- Server successfully starts on port 5000 serving React frontend through Vite integration
+- Created dev.js helper script for proper development workflow management
+- Application fully functional with all emergency pages accessible (cardiac arrest, stroke, heart attack, severe bleeding)
+- PWA features working including offline functionality and mobile optimization
+
 ### August 11, 2025 - Complete Deployment Fix and Build System Overhaul
 - Fixed critical deployment build failures caused by incorrect package.json scripts and build pipeline issues
 - Created custom build.js script that properly handles Vite frontend build and esbuild backend compilation

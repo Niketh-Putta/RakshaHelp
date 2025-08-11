@@ -1,11 +1,13 @@
+// client/src/lib/pwa.ts
+
 export const registerServiceWorker = async () => {
-  if ('serviceWorker' in navigator) {
+  if ("serviceWorker" in navigator) {
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered successfully:', registration);
+      const registration = await navigator.serviceWorker.register("/sw.js");
+      console.log("Service Worker registered successfully:", registration);
       return registration;
     } catch (error) {
-      console.error('Service Worker registration failed:', error);
+      console.error("Service Worker registration failed:", error);
     }
   }
 };
@@ -14,20 +16,20 @@ export const callEmergency = (number: string) => {
   try {
     window.location.href = `tel:${number}`;
   } catch (error) {
-    console.error('Failed to initiate phone call:', error);
-    // Fallback - try with different approach
+    console.error("Failed to initiate phone call:", error);
     window.open(`tel:${number}`);
   }
 };
 
-export const playAudioInstructions = (language: string, emergencyType: string) => {
-  // This would implement Web Speech API or audio file playback
-  // For now, we'll use browser's speech synthesis
-  if ('speechSynthesis' in window) {
+export const playAudioInstructions = (
+  language: string,
+  emergencyType: string,
+) => {
+  if ("speechSynthesis" in window) {
     const utterance = new SpeechSynthesisUtterance(
-      `Playing audio instructions for ${emergencyType} in ${language}`
+      `Playing audio instructions for ${emergencyType} in ${language}`,
     );
-    utterance.lang = language === 'hi' ? 'hi-IN' : 'en-US';
+    utterance.lang = language === "hi" ? "hi-IN" : "en-US";
     speechSynthesis.speak(utterance);
   } else {
     alert(`Audio instructions for ${emergencyType} would play in ${language}`);
@@ -35,18 +37,16 @@ export const playAudioInstructions = (language: string, emergencyType: string) =
 };
 
 export const logEmergencyAccess = (emergencyType: string, language: string) => {
-  // Log emergency screen access for analytics
   const logData = {
     emergencyType,
     language,
     timestamp: new Date().toISOString(),
-    userAgent: navigator.userAgent
+    userAgent: navigator.userAgent,
   };
-  
-  // Store locally for offline analysis
-  const logs = JSON.parse(localStorage.getItem('emergency-logs') || '[]');
+
+  const logs = JSON.parse(localStorage.getItem("emergency-logs") || "[]");
   logs.push(logData);
-  localStorage.setItem('emergency-logs', JSON.stringify(logs));
-  
-  console.log('Emergency access logged:', logData);
+  localStorage.setItem("emergency-logs", JSON.stringify(logs));
+
+  console.log("Emergency access logged:", logData);
 };

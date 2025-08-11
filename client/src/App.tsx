@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 // import { Toaster } from "@/components/ui/toaster";
 // import { TooltipProvider } from "@/components/ui/tooltip";
+import { registerServiceWorker } from "@lib/pwa";
 import { useEffect } from "react";
 import { registerServiceWorker } from "@/lib/pwa";
 import NotFound from "@/pages/not-found";
@@ -11,6 +12,9 @@ import CardiacArrest from "@/pages/cardiac-arrest";
 import Stroke from "@/pages/stroke";
 import HeartAttack from "@/pages/heart-attack";
 import SevereBleeding from "@/pages/severe-bleeding";
+import { initPWA } from "@/lib/pwa";
+initPWA();
+
 
 function Router() {
   return (
