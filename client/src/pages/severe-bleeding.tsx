@@ -5,11 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
 
 // Import severe bleeding images
-import emergencyCall108Img from '/attached_assets/image_1754914323756.png';
-import severeBleedingApplyPressureImg from "@/assets/severe-bleeding-apply-pressure.png";
-import severeBleedingElevateLimbImg from "@/assets/severe-bleeding-elevate-limb.png";
-import severeBleedingDoNotRemoveClothImg from "@/assets/severe-bleeding-do-not-remove-cloth.png";
-import severeBleedingLayDownImg from "@/assets/severe-bleeding-lay-down.png";
+// Using public path reference for build compatibility
+const emergencyCall108Img = '/images/emergency-call-108.png';
+// Using public path references for build compatibility  
+const severeBleedingApplyPressureImg = '/images/severe-bleeding-apply-pressure.png';
+const severeBleedingElevateLimbImg = '/images/severe-bleeding-elevate-limb.png';
+const severeBleedingDoNotRemoveClothImg = '/images/severe-bleeding-do-not-remove-cloth.png';
+const severeBleedingLayDownImg = '/images/severe-bleeding-lay-down.png';
 
 export default function SevereBleeding() {
   const { translations } = useLanguage();

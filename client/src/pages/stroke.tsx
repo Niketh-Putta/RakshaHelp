@@ -3,10 +3,12 @@ import { ArrowLeft, Phone, Brain, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
-import emergencyCall108Img from '/attached_assets/image_1754914323756.png';
-import strokeFastTestImg from '/src/assets/stroke-fast-test.png';
-import strokeRecoveryPositionImg from '/src/assets/stroke-recovery-position.png';
-import strokeNoFoodDrinkImg from '/src/assets/stroke-no-food-drink.png';
+// Using public path reference for build compatibility
+const emergencyCall108Img = '/images/emergency-call-108.png';
+// Using public path references for build compatibility
+const strokeFastTestImg = '/images/stroke-fast-test.png';
+const strokeRecoveryPositionImg = '/images/stroke-recovery-position.png';
+const strokeNoFoodDrinkImg = '/images/stroke-no-food-drink.png';
 
 export default function Stroke() {
   const { translations } = useLanguage();

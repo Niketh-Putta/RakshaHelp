@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### August 11, 2025 - Fixed Vite Build Import Errors for Deployment
+- Resolved critical build failure caused by absolute image import paths from "/attached_assets" and "/src/assets"
+- Converted all absolute import paths to public directory references for build compatibility:
+  - Changed `import emergencyCall108Img from '/attached_assets/image_1754914323756.png'` to `const emergencyCall108Img = '/images/emergency-call-108.png'`
+  - Fixed similar imports across heart-attack.tsx, cardiac-arrest.tsx, stroke.tsx, and severe-bleeding.tsx
+- Migrated 18+ image assets from attached_assets to client/public/images/ directory
+- Created proper build-compatible image references for all emergency step illustrations
+- Verified successful production build with `npm run build` - eliminates deployment blockers
+- Application now ready for deployment with all asset paths properly resolved
+
 ### August 11, 2025 - Complete Emergency Number Migration from 112 to 108
 - Replaced ALL emergency number references from 112 to 108 across the entire application
 - Updated all translation files (English, Hindi, Telugu) with new 108 emergency number
