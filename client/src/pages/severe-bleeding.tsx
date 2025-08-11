@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
 
 // Import severe bleeding images
-import severeBleedingCall112Img from "@/assets/severe-bleeding-call-112.png";
+import emergencyCall108Img from '/attached_assets/image_1754914323756.png';
 import severeBleedingApplyPressureImg from "@/assets/severe-bleeding-apply-pressure.png";
 import severeBleedingElevateLimbImg from "@/assets/severe-bleeding-elevate-limb.png";
 import severeBleedingDoNotRemoveClothImg from "@/assets/severe-bleeding-do-not-remove-cloth.png";
@@ -16,11 +16,11 @@ export default function SevereBleeding() {
 
   const handleCallEmergency = () => {
     try {
-      window.location.href = "tel:112";
+      window.location.href = "tel:108";
     } catch (error) {
       console.error('Failed to initiate phone call:', error);
       // Fallback
-      window.open("tel:112");
+      window.open("tel:108");
     }
   };
 
@@ -95,11 +95,11 @@ export default function SevereBleeding() {
             </p>
             <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
               <img 
-                src={severeBleedingCall112Img} 
-                alt="Emergency services call 112 - India emergency response logo" 
+                src={emergencyCall108Img} 
+                alt="Emergency services call 108 - India emergency response logo" 
                 className="w-full h-40 object-contain rounded mb-2"
               />
-              <p className="text-xs text-blue-600">Call 112 immediately - India's national emergency number</p>
+              <p className="text-xs text-blue-600">Call 108 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>

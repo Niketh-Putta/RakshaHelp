@@ -3,7 +3,7 @@ import { ArrowLeft, Phone, Heart, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/hooks";
-import emergencyCall112Img from '/src/assets/emergency-call-112-standard.png';
+import emergencyCall108Img from '/attached_assets/image_1754914323756.png';
 import chestCompressionImg from '/src/assets/chest-compression-technique.png';
 import aedPlacementImg from '/src/assets/aed-placement.png';
 import cprContinuousImg from '/src/assets/cpr-continuous.png';
@@ -13,11 +13,11 @@ export default function CardiacArrest() {
 
   const handleCallEmergency = () => {
     try {
-      window.location.href = "tel:112";
+      window.location.href = "tel:108";
     } catch (error) {
       console.error('Failed to initiate phone call:', error);
       // Fallback
-      window.open("tel:112");
+      window.open("tel:108");
     }
   };
 
@@ -92,11 +92,11 @@ export default function CardiacArrest() {
             </p>
             <div className="bg-red-50 p-3 rounded-lg border border-red-200">
               <img 
-                src={emergencyCall112Img} 
-                alt="Emergency services call 112 - India emergency response logo" 
+                src={emergencyCall108Img} 
+                alt="Emergency services call 108 - India emergency response logo" 
                 className="w-full h-40 object-contain rounded mb-2"
               />
-              <p className="text-xs text-red-600">Call 112 immediately - India's national emergency number</p>
+              <p className="text-xs text-red-600">Call 108 immediately - India's national emergency number</p>
             </div>
           </CardContent>
         </Card>

@@ -10,6 +10,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### August 11, 2025 - Complete Emergency Number Migration from 112 to 108
+- Replaced ALL emergency number references from 112 to 108 across the entire application
+- Updated all translation files (English, Hindi, Telugu) with new 108 emergency number
+- Replaced all emergency call images with new 108 emergency service logo throughout all pages
+- Updated service worker notification actions to use tel:108 instead of tel:112
+- Modified all emergency page components (cardiac-arrest, heart-attack, stroke, severe-bleeding) to call 108
+- Updated home page emergency call button to use 108
+- Changed all hardcoded image descriptions and alt text to reference 108 service
+- Emergency First Aid PWA now fully compliant with 108 emergency service standard
+
 ### August 11, 2025 - Fixed App Startup and Workflow Configuration
 - Resolved critical startup issue where workflow was trying to run non-existent `npm run dev` script
 - Confirmed Emergency First Aid PWA runs correctly using `tsx server/index.ts` command
