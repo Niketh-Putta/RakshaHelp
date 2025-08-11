@@ -1,6 +1,6 @@
 // sw.js
 // ---- VERSION: bump this every deploy to invalidate old caches ----
-const SW_VERSION = "v4.0.0";
+const SW_VERSION = "v4.0.1";
 const STATIC_CACHE = `static-${SW_VERSION}`;
 
 // Precache only essential shell if you truly need it offline.

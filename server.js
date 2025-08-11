@@ -1,53 +1,40 @@
+// server.js (root)
 import express from "express";
-import compression from "compression";
 import path from "path";
+import compression from "compression";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// where Vite builds the client:
-const distDir = path.join(__dirname, "client", "dist"); // adjust if your dist is elsewhere
-
+// gzip responses
 app.use(compression());
 
-// 1) serve static assets from dist with correct MIME and long cache
+// serve the built client
+const DIST_DIR = path.join(__dirname, "client", "dist");
 app.use(
-  express.static(distDir, {
-    maxAge: "1y",
-    immutable: true,
-    setHeaders: (res, filePath) => {
-      // NEVER cache these three — they must update instantly
-      const noCache = ["index.html", "sw.js", "manifest.json"];
-      if (noCache.some((n) => filePath.endsWith(n))) {
-        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-        res.setHeader("Pragma", "no-cache");
-        res.setHeader("Expires", "0");
+  express.static(DIST_DIR, {
+    // helpful cache headers for hashed files
+    setHeaders(res, filePath) {
+      if (filePath.includes("/assets/")) {
+        // fingerprinted files (immutable)
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      } else {
+        // html/manifest/etc. – never cache
+        res.setHeader("Cache-Control", "no-cache");
       }
     },
   }),
 );
 
-// 2) explicitly serve sw.js and manifest.json from dist root
-app.get("/sw.js", (req, res) => {
-  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  res.sendFile(path.join(distDir, "sw.js"));
+// SPA fallback to index.html
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(DIST_DIR, "index.html"));
 });
 
-app.get("/manifest.json", (req, res) => {
-  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  res.sendFile(path.join(distDir, "manifest.json"));
-});
-
-// 3) SPA fallback — AFTER static — only for routes that are not real files
-app.get("*", (req, res) => {
-  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  res.sendFile(path.join(distDir, "index.html"));
-});
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on :${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
