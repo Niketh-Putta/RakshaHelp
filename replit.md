@@ -73,7 +73,7 @@ Preferred communication style: Simple, everyday language.
   - Warning Signs section with 4-5 bullet points in emergency colors
   - Step-by-Step Instructions with numbered steps, titles, and action statements
   - Visual aid placeholders for future image integration
-  - Sticky "CALL 112 NOW" emergency button at bottom
+  - Sticky "CALL 108 NOW" emergency button at bottom
   - Navigation with back button to home
 - Color-coded borders and elements for each emergency type:
   - Cardiac Arrest: Red theme with Heart icon

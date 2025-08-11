@@ -123,7 +123,7 @@ export default function Home() {
             <Button
               onClick={handleCallEmergency}
               className="bg-[hsl(var(--emergency-green))] hover:bg-[hsl(var(--emergency-green-hover))] text-white py-3 px-4 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
-              data-testid="button-call-112"
+              data-testid="button-call-108"
             >
               <Phone className="mr-2 h-4 w-4" />
               {translations.call112}

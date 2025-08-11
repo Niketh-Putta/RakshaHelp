@@ -216,7 +216,7 @@ const englishTranslations: Translations = {
   spurtingBlood: "Spurting blood (may indicate arterial bleed)",
   personBecomingPaleWeak: "Person becoming pale, weak, or dizzy",
   uncontrolledBleedingAfter10Min: "Uncontrolled bleeding after 10 minutes of pressure",
-  dialImmediatelyIfSevereBleeding: "Dial 112 immediately if bleeding is severe or doesn't stop.",
+  dialImmediatelyIfSevereBleeding: "Dial 108 immediately if bleeding is severe or doesn't stop.",
   applyFirmPressure: "Apply Firm Pressure",
   useCleanClothGauzeHand: "Use clean cloth, gauze, or hand to press directly on the wound.",
   elevateLimbIfPossible: "Elevate the Limb (if possible)",
