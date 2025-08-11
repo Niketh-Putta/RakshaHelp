@@ -51,12 +51,12 @@ export default function Home() {
         <Link href="/cardiac-arrest">
           <Button
             onClick={() => handleEmergencyClick('cardiac-arrest')}
-            className="emergency-button bg-[hsl(var(--emergency-red))] hover:bg-[hsl(var(--emergency-red-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
+            className="emergency-button bg-[hsl(var(--emergency-red))] hover:bg-[hsl(var(--emergency-red-hover))] text-white p-4 sm:p-6 rounded-2xl shadow-lg w-full h-auto min-h-[100px] sm:min-h-[120px] touch-target"
             data-testid="button-cardiac-arrest"
           >
             <div className="text-center">
-              <Heart className="h-10 w-10 mb-3 mx-auto" />
-              <h3 className="font-bold text-lg mb-1 emergency-text">
+              <Heart className="h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 mx-auto" />
+              <h3 className="font-bold text-sm sm:text-lg mb-1 emergency-text leading-tight">
                 {translations.cardiacArrest}
               </h3>
             </div>
@@ -67,12 +67,12 @@ export default function Home() {
         <Link href="/stroke">
           <Button
             onClick={() => handleEmergencyClick('stroke')}
-            className="emergency-button bg-[hsl(var(--emergency-orange))] hover:bg-[hsl(var(--emergency-orange-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
+            className="emergency-button bg-[hsl(var(--emergency-orange))] hover:bg-[hsl(var(--emergency-orange-hover))] text-white p-4 sm:p-6 rounded-2xl shadow-lg w-full h-auto min-h-[100px] sm:min-h-[120px] touch-target"
             data-testid="button-stroke"
           >
             <div className="text-center">
-              <Brain className="h-10 w-10 mb-3 mx-auto" />
-              <h3 className="font-bold text-lg mb-1 emergency-text">
+              <Brain className="h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 mx-auto" />
+              <h3 className="font-bold text-sm sm:text-lg mb-1 emergency-text leading-tight">
                 {translations.stroke}
               </h3>
             </div>
@@ -83,12 +83,12 @@ export default function Home() {
         <Link href="/heart-attack">
           <Button
             onClick={() => handleEmergencyClick('heart-attack')}
-            className="emergency-button bg-[hsl(var(--emergency-yellow))] hover:bg-[hsl(var(--emergency-yellow-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
+            className="emergency-button bg-[hsl(var(--emergency-yellow))] hover:bg-[hsl(var(--emergency-yellow-hover))] text-white p-4 sm:p-6 rounded-2xl shadow-lg w-full h-auto min-h-[100px] sm:min-h-[120px] touch-target"
             data-testid="button-heart-attack"
           >
             <div className="text-center">
-              <Activity className="h-10 w-10 mb-3 mx-auto" />
-              <h3 className="font-bold text-lg mb-1 emergency-text">
+              <Activity className="h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 mx-auto" />
+              <h3 className="font-bold text-sm sm:text-lg mb-1 emergency-text leading-tight">
                 {translations.heartAttack}
               </h3>
             </div>
@@ -99,12 +99,12 @@ export default function Home() {
         <Link href="/severe-bleeding">
           <Button
             onClick={() => handleEmergencyClick('severe-bleeding')}
-            className="emergency-button bg-[hsl(var(--emergency-blue))] hover:bg-[hsl(var(--emergency-blue-hover))] text-white p-6 rounded-2xl shadow-lg w-full h-auto min-h-[120px] touch-target"
+            className="emergency-button bg-[hsl(var(--emergency-blue))] hover:bg-[hsl(var(--emergency-blue-hover))] text-white p-4 sm:p-6 rounded-2xl shadow-lg w-full h-auto min-h-[100px] sm:min-h-[120px] touch-target"
             data-testid="button-severe-bleeding"
           >
             <div className="text-center">
-              <Droplets className="h-10 w-10 mb-3 mx-auto" />
-              <h3 className="font-bold text-lg mb-1 emergency-text">
+              <Droplets className="h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 mx-auto" />
+              <h3 className="font-bold text-sm sm:text-lg mb-1 emergency-text leading-tight">
                 {translations.severeBleeding}
               </h3>
             </div>
@@ -122,18 +122,18 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-3">
             <Button
               onClick={handleCallEmergency}
-              className="bg-[hsl(var(--emergency-green))] hover:bg-[hsl(var(--emergency-green-hover))] text-white py-3 px-4 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
+              className="bg-[hsl(var(--emergency-green))] hover:bg-[hsl(var(--emergency-green-hover))] text-white py-2 sm:py-3 px-2 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transform active:scale-95 transition-all touch-target"
               data-testid="button-call-108"
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               {translations.call112}
             </Button>
             <Button
               onClick={handleShowContacts}
-              className="bg-gray-600 hover:bg-gray-700 text-white py-3 px-4 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
+              className="bg-gray-600 hover:bg-gray-700 text-white py-2 sm:py-3 px-2 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transform active:scale-95 transition-all touch-target"
               data-testid="button-contacts"
             >
-              <Users className="mr-2 h-4 w-4" />
+              <Users className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               {translations.contacts}
             </Button>
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
       <div className="text-center mb-6">
         <Button
           onClick={handleShowOurGoal}
-          className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-semibold text-sm transform active:scale-95 transition-all touch-target"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-xs sm:text-sm transform active:scale-95 transition-all touch-target"
           data-testid="button-our-goal"
         >
           <Target className="mr-2 h-4 w-4" />
