@@ -48,7 +48,7 @@ export const callEmergency = (number: string) => {
     console.error("Failed to initiate phone call:", error);
     try {
       // Method 3: window.open fallback
-      window.open(phoneUrl, "_self");
+      window.open(`tel:${number}`, "_self");
     } catch (fallbackError) {
       // Method 4: Show alert as last resort
       alert(`Please call emergency services: ${number}`);
