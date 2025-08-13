@@ -6,11 +6,12 @@ import { ContactsModal } from "@/components/contacts-modal";
 import { OurGoalModal } from "@/components/our-goal-modal";
 import { useLanguage } from "@/hooks";
 import { callEmergency, logEmergencyAccess } from "@/lib/pwa";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { useState } from "react";
 
 export default function Home() {
   const { translations } = useLanguage();
+  const [, setLocation] = useLocation();
   const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
   const [isOurGoalModalOpen, setIsOurGoalModalOpen] = useState(false);
 
@@ -22,12 +23,26 @@ export default function Home() {
     callEmergency('108');
   };
 
-  const handleShowContacts = () => {
-    setIsContactsModalOpen(true);
+  const openContacts = () => {
+    const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+    const isWebView = /wv|AndroidWebView|; wv\)|Crosswalk|Version\/\d+\.\d+ Chrome\/\d+\.\\d+ Mobile/i.test(navigator.userAgent);
+    
+    if (isSmallScreen || isWebView) {
+      setLocation('/contacts');
+    } else {
+      setIsContactsModalOpen(true);
+    }
   };
 
-  const handleShowOurGoal = () => {
-    setIsOurGoalModalOpen(true);
+  const openGoal = () => {
+    const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+    const isWebView = /wv|AndroidWebView|; wv\)|Crosswalk|Version\/\d+\.\d+ Chrome\/\d+\.\\d+ Mobile/i.test(navigator.userAgent);
+    
+    if (isSmallScreen || isWebView) {
+      setLocation('/goal');
+    } else {
+      setIsOurGoalModalOpen(true);
+    }
   };
 
   return (
@@ -129,7 +144,7 @@ export default function Home() {
               {translations.call112}
             </Button>
             <Button
-              onClick={handleShowContacts}
+              onClick={openContacts}
               className="bg-gray-600 hover:bg-gray-700 text-white py-2 sm:py-3 px-2 sm:px-4 rounded-xl font-semibold text-xs sm:text-sm transform active:scale-95 transition-all touch-target"
               data-testid="button-contacts"
             >
@@ -153,7 +168,7 @@ export default function Home() {
       {/* Our Goal Button */}
       <div className="text-center mb-6">
         <Button
-          onClick={handleShowOurGoal}
+          onClick={openGoal}
           className="bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-xs sm:text-sm transform active:scale-95 transition-all touch-target"
           data-testid="button-our-goal"
         >

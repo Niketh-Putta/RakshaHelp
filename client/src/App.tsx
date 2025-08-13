@@ -9,6 +9,8 @@ import CardiacArrest from "@/pages/cardiac-arrest";
 import Stroke from "@/pages/stroke";
 import HeartAttack from "@/pages/heart-attack";
 import SevereBleeding from "@/pages/severe-bleeding";
+import GoalPage from "@/pages/GoalPage";
+import ContactsPage from "@/pages/ContactsPage";
 
 
 function Router() {
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/stroke" component={Stroke} />
       <Route path="/heart-attack" component={HeartAttack} />
       <Route path="/severe-bleeding" component={SevereBleeding} />
+      <Route path="/goal" component={GoalPage} />
+      <Route path="/contacts" component={ContactsPage} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
