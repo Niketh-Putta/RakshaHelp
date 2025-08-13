@@ -502,3 +502,4 @@ export const availableLanguages = [
   { code: 'hi' as Language, name: '🇮🇳 हिंदी (Hindi)' },
   { code: 'te' as Language, name: '🇮🇳 తెలుగు (Telugu)' }
 ];
+
