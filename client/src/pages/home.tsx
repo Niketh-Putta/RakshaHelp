@@ -170,11 +170,11 @@ export default function Home() {
             {/* Problem Statement */}
             <div className="space-y-3">
               <p className="text-base">
-                {translations.ourGoalProblem1 || "Every year, millions of lives are lost in India due to sudden medical emergencies like cardiac arrest, heart attack, stroke, and severe bleeding."}
+                Every year, <strong>millions of lives are lost</strong> in India due to sudden medical emergencies like <strong>cardiac arrest</strong>, <strong>heart attack</strong>, <strong>stroke</strong>, and <strong>severe bleeding</strong>.
               </p>
               
               <p className="text-base">
-                {translations.ourGoalProblem2 || "In many cases, death occurs before medical help arrives — not because the condition was untreatable, but because no one nearby knew what to do in those first critical minutes."}
+                In many cases, death occurs <strong>before medical help arrives</strong> — not because the condition was untreatable, but because <strong>no one nearby knew what to do</strong> in those <strong>first critical minutes</strong>.
               </p>
             </div>
 
@@ -188,17 +188,17 @@ export default function Home() {
               <ul className="space-y-3 text-blue-900" data-testid="our-goal-points">
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span>{translations.ourGoalMission1 || "Empower every family to have at least one person who can give life-saving first aid."}</span>
+                  <span><strong>Empower every family</strong> to have at least one person who can give <strong>life-saving first aid</strong>.</span>
                 </li>
                 
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span>{translations.ourGoalMission2 || "Provide clear, quick, and reliable guidance during emergencies."}</span>
+                  <span>Provide <strong>clear, quick, and reliable guidance</strong> during emergencies.</span>
                 </li>
                 
                 <li className="flex items-start space-x-2">
                   <span className="text-blue-600 font-bold">•</span>
-                  <span>{translations.ourGoalMission3 || "Bridge the gap in healthcare access, especially in rural areas where hospitals and trained professionals are far away."}</span>
+                  <span><strong>Bridge the gap in healthcare access</strong>, especially in <strong>rural areas</strong> where hospitals and trained professionals are far away.</span>
                 </li>
               </ul>
             </div>
@@ -206,14 +206,14 @@ export default function Home() {
             {/* Vision Statement */}
             <div className="bg-green-50 p-4 rounded-xl">
               <p className="text-green-900 font-medium">
-                {translations.ourGoalVision || "With the right knowledge at the right time, countless lives can be saved. This app is here to make that possible — one person, one family, one village at a time."}
+                With the <strong>right knowledge at the right time</strong>, <strong>countless lives can be saved</strong>. This app is here to make that possible — <strong>one person, one family, one village at a time</strong>.
               </p>
             </div>
 
             {/* Call to Action */}
             <div className="text-center pt-4">
               <p className="text-sm text-gray-600 italic">
-                {translations.ourGoalCallToAction || "Together, we can turn ordinary people into life-savers."}
+                Together, we can turn <strong>ordinary people into life-savers</strong>.
               </p>
             </div>
           </div>
