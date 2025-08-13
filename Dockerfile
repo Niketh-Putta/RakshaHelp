@@ -13,7 +13,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Build the application
-RUN chmod +x deploy.sh && ./deploy.sh
+RUN npm run build
 
 # Expose port
 EXPOSE 5000
@@ -23,4 +23,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:5000/ || exit 1
 
 # Start the application
-CMD ["node", "dist/index.js"]
+CMD ["npm", "start"]

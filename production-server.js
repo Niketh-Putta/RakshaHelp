@@ -10,7 +10,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
+
+// Ensure SESSION_SECRET is available
+if (!process.env.SESSION_SECRET) {
+  console.warn('Warning: SESSION_SECRET not set, using default for development');
+  process.env.SESSION_SECRET = 'emergency-first-aid-app-secret-key-2024';
+}
 
 // Enable gzip compression
 app.use(compression());
@@ -50,7 +56,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal Server Error' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ Emergency First Aid App running on port ${PORT}`);
-  console.log(`🌐 Access at: http://localhost:${PORT}`);
+  console.log(`🌐 Access at: http://0.0.0.0:${PORT}`);
+  console.log(`🔐 SESSION_SECRET configured: ${process.env.SESSION_SECRET ? 'Yes' : 'No'}`);
 });
