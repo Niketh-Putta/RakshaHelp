@@ -1,0 +1,89 @@
+Project context
+
+React + TypeScript app using wouter for routing.
+
+Home page currently opens OurGoalModal and ContactsModal using local state.
+
+I want both modal (web) and full page (mobile/WebView fallback) versions.
+
+Tasks
+
+Create pages
+
+Add src/pages/GoalPage.tsx and src/pages/ContactsPage.tsx.
+
+Each page should reuse the existing modal content, not duplicate logic.
+
+Extract the inner content of OurGoalModal and ContactsModal into shared, presentational components:
+
+src/components/our-goal-content.tsx
+
+src/components/contacts-content.tsx
+
+The new pages render those content components inside a simple Card layout with a header and a “Back” button that uses wouter’s useLocation() to go back to /.
+
+Wire routes
+
+In the top‑level router (where wouter Switch/Route are declared), add:
+
+tsx
+Copy
+Edit
+<Route path="/goal" component={GoalPage} />
+<Route path="/contacts" component={ContactsPage} />
+Update Home buttons
+
+Change the Our Goal and Contacts buttons to navigate to /goal and /contacts instead of only toggling modals.
+
+Keep current modal behavior for desktop by using this logic:
+
+tsx
+Copy
+Edit
+const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+const isWebView =
+  /wv|AndroidWebView|; wv\)|Crosswalk|Version\/\d+\.\d+ Chrome\/\d+\.\\d+ Mobile/i.test(navigator.userAgent);
+
+const openGoal = () => {
+  if (isSmallScreen || isWebView) {
+    // navigate to page
+    setLocation('/goal');
+  } else {
+    // open modal
+    setIsOurGoalModalOpen(true);
+  }
+};
+const openContacts = () => {
+  if (isSmallScreen || isWebView) {
+    setLocation('/contacts');
+  } else {
+    setIsContactsModalOpen(true);
+  }
+};
+Swap onClick={handleShowOurGoal} → onClick={openGoal} and onClick={handleShowContacts} → onClick={openContacts}.
+
+Share content, not styles
+
+Keep OurGoalModal and ContactsModal as thin wrappers that render the new OurGoalContent/ContactsContent inside the modal shell.
+
+The new pages render the same content components inside a page container.
+
+Accessibility
+
+Ensure headings (h1/h2) exist on the new pages.
+
+“Back” button has aria-label="Go back".
+
+TypeScript
+
+Keep all files TypeScript‑strict.
+
+Deliverables
+
+New files: src/pages/GoalPage.tsx, src/pages/ContactsPage.tsx, src/components/our-goal-content.tsx, src/components/contacts-content.tsx.
+
+Updated router with the two routes.
+
+Updated Home button handlers using the isSmallScreen || isWebView logic above.
+
+No breaking changes to existing modals.
