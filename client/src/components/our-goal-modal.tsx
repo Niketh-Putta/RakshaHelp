@@ -1,4 +1,5 @@
 // file: src/components/our-goal-modal.tsx
+import { useEffect } from "react";
 import { X, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,12 +15,10 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
 
   if (!isOpen) return null;
 
-  // Fallback text so the modal always shows readable content.
+  // Fallbacks (never render empty UI)
   const title = translations?.ourGoal || "Our Goal";
   const closeLabel = translations?.close || "Close";
 
-  // Prefer an array from i18n (e.g., translations.ourGoalPoints),
-  // otherwise use individual keys or final hardcoded defaults.
   const pointsFromArray: string[] | undefined = (translations as any)
     ?.ourGoalPoints;
   const pointsFromKeys = [
@@ -45,14 +44,40 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
     (pointsFromKeys.length > 0 && pointsFromKeys) ||
     fallbackPoints;
 
+  // Lock background scroll & close on Escape
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
   return (
     <div
       className="fixed inset-0 z-[9999] bg-black/50 flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="our-goal-title"
+      onClick={onClose} // click backdrop to close
     >
-      <Card className="bg-white w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl">
+      {/* Force text visibility even if some global CSS overrides colors */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            #our-goal-modal * { color: #111 !important; opacity: 1 !important; }
+            #our-goal-modal h2 { color: #111 !important; }
+          `,
+        }}
+      />
+      <Card
+        id="our-goal-modal"
+        className="bg-white w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()} // keep clicks inside modal from closing
+      >
         <CardContent className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
@@ -60,7 +85,7 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
               <Target className="h-8 w-8 text-blue-600" />
               <h2
                 id="our-goal-title"
-                className="text-2xl font-bold text-gray-800"
+                className="text-2xl font-bold"
                 data-testid="text-our-goal-title"
               >
                 {title}
@@ -76,8 +101,23 @@ export function OurGoalModal({ isOpen, onClose }: OurGoalModalProps) {
             </Button>
           </div>
 
-          {/* Content (always visible text, never placeholders) */}
-          <ul className="space-y-3 text-gray-800" data-testid="our-goal-points">
+          {/* Probe line: if you see this, text is rendering */}
+          <p
+            id="goal-probe"
+            className="mb-4 rounded-lg border"
+            style={{
+              color: "#111",
+              background: "#fffbcc",
+              padding: "8px 12px",
+              borderColor: "#e7d000",
+              fontWeight: 600,
+            }}
+          >
+            PROBE: Text rendering is working.
+          </p>
+
+          {/* Real content – guaranteed text (no skeletons) */}
+          <ul className="space-y-3" data-testid="our-goal-points">
             {points.map((p, i) => (
               <li key={i} className="rounded-xl border p-3 leading-relaxed">
                 {p}
