@@ -1,41 +1,54 @@
 // client/src/lib/pwa.ts
 
+// Guarded SW registration — skips inside Android WebView or ?nosw=1
 export const registerServiceWorker = async () => {
-  if ("serviceWorker" in navigator) {
-    try {
-      const registration = await navigator.serviceWorker.register("/sw.js");
-      console.log("Service Worker registered successfully:", registration);
-      return registration;
-    } catch (error) {
-      console.error("Service Worker registration failed:", error);
-    }
+  if (!("serviceWorker" in navigator)) return;
+
+  // Detect Android WebView or explicit ?nosw=1 param
+  const ua = navigator.userAgent.toLowerCase();
+  const isAndroidWebView =
+    ua.includes("wv") || (ua.includes("android") && !ua.includes("chrome/"));
+  const urlHasNoSW =
+    new URL(window.location.href).searchParams.get("nosw") === "1";
+
+  if (isAndroidWebView || urlHasNoSW) {
+    console.log("[PWA] SW disabled in WebView");
+    return;
+  }
+
+  try {
+    const registration = await navigator.serviceWorker.register("/sw.js", {
+      updateViaCache: "none",
+    });
+    console.log("Service Worker registered successfully:", registration);
+    return registration;
+  } catch (error) {
+    console.error("Service Worker registration failed:", error);
   }
 };
 
 export const callEmergency = (number: string) => {
   try {
-    // Multiple approaches for maximum mobile compatibility
     const phoneUrl = `tel:${number}`;
-    
-    // Method 1: Direct window.location redirect (most reliable)
+
+    // Method 1: Direct window.location redirect
     if (window.location) {
       window.location.href = phoneUrl;
       return;
     }
-    
-    // Method 2: Create and click a hidden link (fallback)
-    const link = document.createElement('a');
+
+    // Method 2: Hidden link fallback
+    const link = document.createElement("a");
     link.href = phoneUrl;
-    link.style.display = 'none';
+    link.style.display = "none";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
   } catch (error) {
     console.error("Failed to initiate phone call:", error);
     try {
       // Method 3: window.open fallback
-      window.open(phoneUrl, '_self');
+      window.open(phoneUrl, "_self");
     } catch (fallbackError) {
       // Method 4: Show alert as last resort
       alert(`Please call emergency services: ${number}`);
@@ -73,18 +86,31 @@ export const logEmergencyAccess = (emergencyType: string, language: string) => {
   console.log("Emergency access logged:", logData);
 };
 
-// --- add this to client/src/lib/pwa.ts ---
+// Init PWA with guard
 export async function initPWA() {
   try {
-    // if you already have registerServiceWorker in this file, reuse it:
     if (typeof registerServiceWorker === "function") {
       await registerServiceWorker();
       return;
     }
 
-    // fallback: register directly
+    // fallback direct registration (still guarded)
     if ("serviceWorker" in navigator) {
-      const reg = await navigator.serviceWorker.register("/sw.js");
+      const ua = navigator.userAgent.toLowerCase();
+      const isAndroidWebView =
+        ua.includes("wv") ||
+        (ua.includes("android") && !ua.includes("chrome/"));
+      const urlHasNoSW =
+        new URL(window.location.href).searchParams.get("nosw") === "1";
+
+      if (isAndroidWebView || urlHasNoSW) {
+        console.log("[PWA] SW disabled in WebView");
+        return;
+      }
+
+      const reg = await navigator.serviceWorker.register("/sw.js", {
+        updateViaCache: "none",
+      });
       reg.update().catch(() => {});
       if (reg.waiting) reg.waiting.postMessage({ type: "SKIP_WAITING" });
 
