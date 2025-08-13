@@ -9,6 +9,9 @@ import {
 const LANGUAGE_STORAGE_KEY = "emergency-app-language";
 
 export function useLanguage() {
+  // --- Startup debug log ---
+  console.log("[LANG DEBUG] useLanguage hook mounted");
+
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     return (saved as Language) || "en";
