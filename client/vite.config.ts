@@ -4,9 +4,9 @@ import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   plugins: [react()],
-  root: ".", // the client folder itself
+  root: ".",
   build: {
-    outDir: "../dist/public",
+    outDir: "dist",
     emptyOutDir: true,
   },
   resolve: {
